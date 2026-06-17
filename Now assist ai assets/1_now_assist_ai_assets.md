@@ -1,0 +1,2997 @@
+# Now Assist AI Assets
+
+
+Common issues by Now Assist feature (continued)
+Feature Issue Solution
+Now Assist Chat is not
+•Verify that all of your Now Assist plugins are up to date.
+in Virtual showing
+For details, see Install an update to a ServiceNow Store
+Agent search results
+application .
+•Verify that AI Search and Now Assist in AI Search are set up
+and configured. For details, see Configuring AI Search and
+Install Now Assist in AI Search .
+•Verify that search sources were configured for the Virtual Agent
+assistant. You can specify search sources for an assistant
+when you set it up. Search sources are essential for Virtual
+Agent and the Now Assist panel. Without them, they cannot
+discover or rank skills and agentic workflows. For details, see
+Configuring assistants overview and Assign search sources
+to a chat assistant .
+Now Assist Error when Verify that you have the correct role, either virtual_agent_admin
+in Virtual attempting or sn_vad_genai.topic_migration_admin. For more information,
+Agent to migrate see Migrate NLU topics to LLM topics .
+Virtual
+Agent NLU
+conversations
+to LLM
+Now Assist AI assets
+The Now Assist AI experience includes generative AI skills, AI agents, and AI agentic workflows.
+These components work alone or in combination to help achieve efficiencies and results on your
+instance.
+© 2026 ServiceNow, Inc. All rights reserved. 39
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Feature** | **Issue** | **Solution** |
+|---|---|---|
+| Now Assist in Virtual Agent | Chat is not showing search results | •Verify that all of your Now Assist plugins are up to date. For details, see Install an update to a ServiceNow Store application . •Verify that AI Search and Now Assist in AI Search are set up and configured. For details, see Configuring AI Search and Install Now Assist in AI Search . •Verify that search sources were configured for the Virtual Agent assistant. You can specify search sources for an assistant when you set it up. Search sources are essential for Virtual Agent and the Now Assist panel. Without them, they cannot discover or rank skills and agentic workflows. For details, see Configuring assistants overview and Assign search sources to a chat assistant . |
+| Now Assist in Virtual Agent | Error when attempting to migrate Virtual Agent NLU conversations to LLM | Verify that you have the correct role, either virtual_agent_admin or sn_vad_genai.topic_migration_admin. For more information, see Migrate NLU topics to LLM topics . |
+
+Get started
+Now Assist skills Now Assist Platform AI agents
+agentic workflows
+An agent is a software
+Now Assist skills are
+An agentic workflow is entity that can perceive
+predefined capabilities
+a structured sequence its environment, make
+that use generative
+of tasks executed by decisions, and take actions
+AI to perform tasks
+one or more AI agents to achieve specific goals.
+such as generating
+with minimal human They are often used to
+summaries, resolution
+intervention to fulfill automate tasks, interact
+notes, and so forth.
+a business objective. with users, or manage
+You can create and complex processes.
+manage these workflows
+in AI Agent Studio.
+Important: Some Now Assist skills, agents, and agentic workflows are turned on by
+default. For more information, see Now Assist skills, agents, and agentic workflows on by
+default.
+For a list of AI assets that are turned on by default, see Now Assist skills, agents, and agentic
+workflows on by default.
+Important:
+•Not all model providers are available for customers with in-country SKUs, and some Now
+Assist products/features are currently unavailable for in-country customers. For more
+information, see the KB1584492 article in the Now Support Knowledge Base. Be sure to
+check for model provider availability updates in future releases.
+•Some Now Assist products/features are currently unavailable for customers in the
+FedRAMP, NSC DOD IL5, or Australia IRAP-Protected data centers, self-hosted
+customers, or in other restricted environments. For more information, see the
+KB0743854 article in the Now Support Knowledge Base. Be sure to check for availability
+updates in future releases.
+•Some Now Assist products/features are currently available only for customers in some
+regions. Be sure to check for availability updates in future releases.
+•Some AI products and skills are not available in Regulated Markets. For more information,
+see KB2593939: Regulated Markets AI Products/Skills Not Available . Be sure to check
+for availability updates in future releases.
+AI limitations
+This application uses artificial intelligence (AI) and machine learning, which are rapidly evolving fields of study that generate predictions based on patterns
+in data. As a result, this application may not always produce accurate, complete, or appropriate information. Furthermore, there is no guarantee that this
+application has been fully trained or tested for your use case. To mitigate these issues, it is your responsibility to test and evaluate your use of this application for
+accuracy, harm, and appropriateness for your use case, employ human oversight of output, and refrain from relying solely on AI-generated outputs for decision-
+making purposes. This is especially important if you choose to deploy this application in areas with consequential impacts such as healthcare, finance, legal,
+employment, security, or infrastructure. You agree to abide by ServiceNow’s AI Acceptable Use Policy , which may be updated by ServiceNow.
+© 2026 ServiceNow, Inc. All rights reserved. 40
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Now Assist skills Now Assist skills are predefined capabilities that use generative AI to perform tasks such as generating summaries, resolution notes, and so forth.** | **Now Assist agentic workflows An agentic workflow is a structured sequence of tasks executed by one or more AI agents with minimal human intervention to fulfill a business objective. You can create and manage these workflows in AI Agent Studio.** | **Platform AI agents An agent is a software entity that can perceive its environment, make decisions, and take actions to achieve specific goals. They are often used to automate tasks, interact with users, or manage complex processes.** |
+|---|---|---|
+
+Data processing
+This application requires data to be transferred from ServiceNow customers' individual instances to a centralized ServiceNow environment, which may be located
+in a different data center region from the one where your instance is, and potentially to a third-party cloud provider, such as Microsoft Azure. This data is handled
+per ServiceNow's internal policies and procedures, including our policies available through our CORE Compliance Portal .
+Data collection
+ServiceNow collects and uses the inputs, outputs, and edits to outputs of this application to develop and improve ServiceNow technologies including ServiceNow
+models and AI products. Customers can opt out of future data collection at any time, as described in the Now Assist Opt-Out page.
+Now Assist skills, agents, and agentic workflows on by default
+Starting with the Zurich Patch 4 release, some Now Assist skills, agents, and agentic workflows
+are turned on by default.
+Important: Some Now Assist skills, agents, and agentic workflows are turned on by
+default. The default behavior works as follows:
+New customers
+When you install a Now Assist product, designated skills, agents, or agentic
+workflows are turned on automatically.
+Existing customers who are upgrading (starting with Zurich Patch 4)
+There is no change to skills, agents, or agentic workflows that are currently
+enabled and customized.
+An AI asset is turned on if:
+•The Now Assist plugin is installed, but the asset was never turned on.
+•An admin has never adjusted roles for the skill.
+An AI asset is not turned on if:
+•The asset was previously turned on, and then turned off again.
+•An admin has adjusted roles for the asset.
+Note: Some workflow skills support Now Assist functionality. Deactivating these skills may
+negatively impact some features.
+Now Assist AI assets that are on by default
+Release notes
+Effective
+Product Type Asset name
+date
+Impact Skill Outcome summarization December
+11, 2025
+Now Assist for Accounts Payable Skill Invoice case summarization December
+Operations (APO) 11, 2025
+Purchase order summarization December
+11, 2025
+Now Assist for Customer Service Agent AI voice March 12,
+Management (CSM) 2026
+© 2026 ServiceNow, Inc. All rights reserved. 41
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+| Impact | Skill | Outcome summarization | December 11, 2025 |
+| Now Assist for Accounts Payable Operations (APO) | Skill | Invoice case summarization | December 11, 2025 |
+|  |  | Purchase order summarization | December 11, 2025 |
+|  |  | AI voice | March 12, 2026 |
+
+Effective
+Product Type Asset name
+date
+Update case AI voice June 11,
+2026
+Now Assist for Configuration Skill Configuration item (CI) December
+Management Database (CMDB) summarization 11, 2025
+Manage duplicate CIs December
+11, 2025
+Service Graph Connector December
+diagnosis 11, 2025
+Agentic Search CMDB December
+workflow 11, 2025
+Now Assist for Creator Skill Spoke generation December
+11, 2025
+Playbook summarization June 11,
+2026
+Now Assist for Employee Experience Skill Case summarization for March 12,
+approvals 2026
+Requested item summarization March 12,
+for approvals 2026
+Request summarization for March 12,
+approvals 2026
+Now Assist for Enterprise Architecture Skill ADR DOC actions December
+(EA) 11, 2025
+ADR DOC summarization December
+11, 2025
+Business application insights December
+11, 2025
+Diagram change analysis December
+11, 2025
+Refine text December
+11, 2025
+Now Assist for Operational Skill Extract data from utility December
+Sustainability Management invoices 11, 2025
+Now Assist for Hardware Asset Skill Generate hardware asset March 12,
+Management (HAM) insights 2026
+Agentic Help repair hardware assets December
+workflow 11, 2025
+Agent User resolution mapping agent December
+11, 2025
+Now Assist for Health and Safety Skill Incident summarization December
+11, 2025
+Agentic Health safety incident patterns March 12,
+workflow assistant agentic workflow 2026
+© 2026 ServiceNow, Inc. All rights reserved. 42
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+|  |  | Update case AI voice | June 11, 2026 |
+| Now Assist for Configuration Management Database (CMDB) | Skill | Configuration item (CI) summarization | December 11, 2025 |
+|  |  | Manage duplicate CIs | December 11, 2025 |
+|  |  | Service Graph Connector diagnosis | December 11, 2025 |
+|  | Agentic workflow | Search CMDB | December 11, 2025 |
+| Now Assist for Creator | Skill | Spoke generation | December 11, 2025 |
+|  |  | Playbook summarization | June 11, 2026 |
+| Now Assist for Employee Experience | Skill | Case summarization for approvals | March 12, 2026 |
+|  |  | Requested item summarization for approvals | March 12, 2026 |
+|  |  | Request summarization for approvals | March 12, 2026 |
+| Now Assist for Enterprise Architecture (EA) | Skill | ADR DOC actions | December 11, 2025 |
+|  |  | ADR DOC summarization | December 11, 2025 |
+|  |  | Business application insights | December 11, 2025 |
+|  |  | Diagram change analysis | December 11, 2025 |
+|  |  | Refine text | December 11, 2025 |
+| Now Assist for Operational Sustainability Management | Skill | Extract data from utility invoices | December 11, 2025 |
+| Now Assist for Hardware Asset Management (HAM) | Skill | Generate hardware asset insights | March 12, 2026 |
+|  | Agentic workflow | Help repair hardware assets | December 11, 2025 |
+|  | Agent | User resolution mapping agent | December 11, 2025 |
+| Now Assist for Health and Safety | Skill | Incident summarization | December 11, 2025 |
+|  | Agentic workflow | Health safety incident patterns assistant agentic workflow | March 12, 2026 |
+
+Effective
+Product Type Asset name
+date
+Now Assist for HR Service Delivery Skill Case summarization March 12,
+(HRSD) 2026
+Chat reply recommendation March 12,
+2026
+Chat summarization March 12,
+2026
+Email reply recommendation March 12,
+2026
+Resolution notes generation March 12,
+2026
+Sentiment analysis March 12,
+2026
+Sidebar discussion March 12,
+summarization 2026
+Now Assist for Integrated Risk Skill Common control objective December
+Management (IRM) creation 11, 2025
+Control objective impact December
+analyzer 11, 2025
+Issue summarization December
+11, 2025
+Recommendation of similar December
+control objectives 11, 2025
+Regulatory alert December
+summarization 11, 2025
+Regulatory alert impacted December
+citations 11, 2025
+Regulatory alert impacted December
+control objectives 11, 2025
+Regulatory alert impacted December
+controls 11, 2025
+Regulatory alert impacted December
+policies 11, 2025
+Risk assessment December
+summarization 11, 2025
+Risk event summarization December
+11, 2025
+Agentic Get regulatory analysis December
+workflow 11, 2025
+Generate regulatory action December
+plans 11, 2025
+Suggest potential risks December
+11, 2025
+© 2026 ServiceNow, Inc. All rights reserved. 43
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+| Now Assist for HR Service Delivery (HRSD) | Skill | Case summarization | March 12, 2026 |
+|  |  | Chat reply recommendation | March 12, 2026 |
+|  |  | Chat summarization | March 12, 2026 |
+|  |  | Email reply recommendation | March 12, 2026 |
+|  |  | Resolution notes generation | March 12, 2026 |
+|  |  | Sentiment analysis | March 12, 2026 |
+|  |  | Sidebar discussion summarization | March 12, 2026 |
+|  | Skill | Common control objective creation | December 11, 2025 |
+|  |  | Control objective impact analyzer | December 11, 2025 |
+|  |  | Issue summarization | December 11, 2025 |
+|  |  | Recommendation of similar control objectives | December 11, 2025 |
+|  |  | Regulatory alert summarization | December 11, 2025 |
+|  |  | Regulatory alert impacted citations | December 11, 2025 |
+|  |  | Regulatory alert impacted control objectives | December 11, 2025 |
+|  |  | Regulatory alert impacted controls | December 11, 2025 |
+|  |  | Regulatory alert impacted policies | December 11, 2025 |
+|  |  | Risk assessment summarization | December 11, 2025 |
+|  |  | Risk event summarization | December 11, 2025 |
+|  |  | Get regulatory analysis | December 11, 2025 |
+|  |  | Generate regulatory action plans | December 11, 2025 |
+|  |  | Suggest potential risks | December 11, 2025 |
+
+Effective
+Product Type Asset name
+date
+Optimize issue resolution June 11,
+2026
+Agent Control objective change December
+agent 11, 2025
+Regulatory change task December
+planning agent 11, 2025
+Report an issue June 11,
+2026
+Risk suggestion AI agent December
+11, 2025
+Now Assist for IT Operations Skill Analyze service health March 12,
+Management (ITOM) 2026
+Analyze service observability March 12,
+dashboard 2026
+Alert analysis January
+20, 2026
+Alert investigation January
+20, 2026
+Service Mapping candidate January
+20, 2026
+Service Mapping candidates January
+Impact 20, 2026
+Agentic Manage alerts autonomously January
+workflow 20, 2026
+Analyze alert impact June 11,
+2026
+Agent Service level objective (SLO) March 12,
+creator 2026
+Datadog APM MCP Server June 11,
+2026
+Dynatrace MCP Server June 11,
+2026
+Kentik analysis June 11,
+2026
+New Relic MCP Server June 11,
+2026
+Prometheus API June 11,
+2026
+Splunk MCP Server June 11,
+2026
+Now Assist for IT Service Management Skill Change request December
+(ITSM) summarization 11, 2025
+© 2026 ServiceNow, Inc. All rights reserved. 44
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+|  |  | Optimize issue resolution | June 11, 2026 |
+|  | Agent | Control objective change agent | December 11, 2025 |
+|  |  | Regulatory change task planning agent | December 11, 2025 |
+|  |  | Report an issue | June 11, 2026 |
+|  |  | Risk suggestion AI agent | December 11, 2025 |
+| Now Assist for IT Operations Management (ITOM) | Skill | Analyze service health | March 12, 2026 |
+|  |  | Analyze service observability dashboard | March 12, 2026 |
+|  |  | Alert analysis | January 20, 2026 |
+|  |  | Alert investigation | January 20, 2026 |
+|  |  | Service Mapping candidate | January 20, 2026 |
+|  |  | Service Mapping candidates Impact | January 20, 2026 |
+|  | Agentic workflow | Manage alerts autonomously | January 20, 2026 |
+|  |  | Analyze alert impact | June 11, 2026 |
+|  | Agent | Service level objective (SLO) creator | March 12, 2026 |
+|  |  | Datadog APM MCP Server | June 11, 2026 |
+|  |  | Dynatrace MCP Server | June 11, 2026 |
+|  |  | Kentik analysis | June 11, 2026 |
+|  |  | New Relic MCP Server | June 11, 2026 |
+|  |  | Prometheus API | June 11, 2026 |
+|  |  | Splunk MCP Server | June 11, 2026 |
+|  |  | Change request summarization | December 11, 2025 |
+
+Effective
+Product Type Asset name
+date
+Chat reply recommendation March 12,
+2026
+Chat summarization December
+11, 2025
+Incident summarization December
+11, 2025
+Investigate boot time issues March 12,
+2026
+Investigate Zoom call quality March 12,
+issues 2026
+KB generation March 12,
+2026
+Resolution notes generation March 12,
+2026
+Summarize a change request January
+20, 2026
+Summarize a chat January
+conversation 20, 2026
+Summarize an incident January
+20, 2026
+Agentic Incident assist April 09,
+workflow 2026
+Now Assist for Legal Service Delivery Skill Legal matter summarization December
+(LSD) 11, 2025
+Legal request summarization December
+11, 2025
+Agentic Triage legal requests December
+workflow 11, 2025
+Now Assist for Operational Agentic Import OT device spreadsheet December
+Technology Manager (OTM) workflow into OT CMDB 11, 2025
+Now Assist for Operational Skill Search for a related record December
+Technology Manager (OTM) 11, 2025
+Now Assist for Operational Skill OT incident summarization March 12,
+Technology Service Management 2026
+(OTSM)
+OT resolution notes March 12,
+generation 2026
+Agentic Generate OT KB articles agentic March 12,
+workflow workflow 2026
+Now Assist for Privacy Management Skill Common control objective December
+creation 11, 2025
+Control objective impact December
+analyzer 11, 2025
+© 2026 ServiceNow, Inc. All rights reserved. 45
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+|  |  | Chat reply recommendation | March 12, 2026 |
+|  |  | Chat summarization | December 11, 2025 |
+|  |  | Incident summarization | December 11, 2025 |
+|  |  | Investigate boot time issues | March 12, 2026 |
+|  |  | Investigate Zoom call quality issues | March 12, 2026 |
+|  |  | KB generation | March 12, 2026 |
+|  |  | Resolution notes generation | March 12, 2026 |
+|  |  | Summarize a change request | January 20, 2026 |
+|  |  | Summarize a chat conversation | January 20, 2026 |
+|  |  | Summarize an incident | January 20, 2026 |
+|  | Agentic workflow | Incident assist | April 09, 2026 |
+| Now Assist for Legal Service Delivery (LSD) | Skill | Legal matter summarization | December 11, 2025 |
+|  |  | Legal request summarization | December 11, 2025 |
+|  | Agentic workflow | Triage legal requests | December 11, 2025 |
+| Now Assist for Operational Technology Manager (OTM) | Agentic workflow | Import OT device spreadsheet into OT CMDB | December 11, 2025 |
+| Now Assist for Operational Technology Manager (OTM) | Skill | Search for a related record | December 11, 2025 |
+| Now Assist for Operational Technology Service Management (OTSM) | Skill | OT incident summarization | March 12, 2026 |
+|  |  | OT resolution notes generation | March 12, 2026 |
+|  | Agentic workflow | Generate OT KB articles agentic workflow | March 12, 2026 |
+|  |  | Common control objective creation | December 11, 2025 |
+|  |  | Control objective impact analyzer | December 11, 2025 |
+
+Effective
+Product Type Asset name
+date
+Recommendation of similar December
+control objectives 11, 2025
+Risk assessment summary December
+11, 2025
+Purchase Order Management Agentic Define PO exception mitigation March 12,
+workflow strategy 2026
+Email Intent to Action March 12,
+2026
+Now Assist for Security Incident Skill Correlation insights December
+Response generation 11, 2025
+Post-incident analysis December
+11, 2025
+Resolution notes generation December
+11, 2025
+Security incident quality December
+assessment 11, 2025
+Security incident recommended December
+actions 11, 2025
+Security incident December
+summarization 11, 2025
+Natural Language Condition March 12,
+Evaluator 2026
+Agentic Analyze security operations March 12,
+workflow metrics 2026
+Close security incident March 12,
+2026
+Generate SIR shift handover March 12,
+report 2026
+Resolve security incident March 12,
+2026
+Agent Endpoint Detection and March 12,
+Response AI agent 2026
+Exchange online integration March 12,
+handling AI agent 2026
+Observable analysis AI agent March 12,
+2026
+Security incident resolution AI March 12,
+agent 2026
+Security incident wrap up March 12,
+generator AI agent 2026
+Security incident activities March 12,
+handling AI agent 2026
+© 2026 ServiceNow, Inc. All rights reserved. 46
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+|  |  | Recommendation of similar control objectives | December 11, 2025 |
+|  |  | Risk assessment summary | December 11, 2025 |
+| Purchase Order Management | Agentic workflow | Define PO exception mitigation strategy | March 12, 2026 |
+|  |  | Email Intent to Action | March 12, 2026 |
+|  | Skill | Correlation insights generation | December 11, 2025 |
+|  |  | Post-incident analysis | December 11, 2025 |
+|  |  | Resolution notes generation | December 11, 2025 |
+|  |  | Security incident quality assessment | December 11, 2025 |
+|  |  | Security incident recommended actions | December 11, 2025 |
+|  |  | Security incident summarization | December 11, 2025 |
+|  |  | Natural Language Condition Evaluator | March 12, 2026 |
+|  | Agentic workflow | Analyze security operations metrics | March 12, 2026 |
+|  |  | Close security incident | March 12, 2026 |
+|  |  | Generate SIR shift handover report | March 12, 2026 |
+|  |  | Resolve security incident | March 12, 2026 |
+|  |  | Endpoint Detection and Response AI agent | March 12, 2026 |
+|  |  | Exchange online integration handling AI agent | March 12, 2026 |
+|  |  | Observable analysis AI agent | March 12, 2026 |
+|  |  | Security incident resolution AI agent | March 12, 2026 |
+|  |  | Security incident wrap up generator AI agent | March 12, 2026 |
+|  |  | Security incident activities handling AI agent | March 12, 2026 |
+
+Effective
+Product Type Asset name
+date
+Security incident shift March 12,
+handover 2026
+Security incident retrieval March 12,
+2026
+Security metrics analysis March 12,
+2026
+Now Assist for Software Asset Skill Publisher compliance December
+Management (SAM) summarization 11, 2025
+Product compliance December
+summarization 11, 2025
+Recommended actions December
+11, 2025
+SaaS user resolution December
+11, 2025
+Error log summarization April 09,
+2026
+Error resolution April 09,
+recommendation 2026
+Contract entitlement data April 09,
+extraction 2026
+Product match reviewer June 11,
+2026
+Software normalization June 11,
+2026
+Agentic Reclamation rule creation December
+workflow 11, 2025
+Removal candidate evaluation December
+11, 2025
+Now Assist for Strategic Portfolio Skill EAP doc summarization December
+Management (SPM) 11, 2025
+Feedback summarization December
+11, 2025
+Identify similar records December
+11, 2025
+Multi feedback summarization December
+11, 2025
+Planning item doc December
+summarization 11, 2025
+Project doc summarization December
+11, 2025
+Project insights generation December
+11, 2025
+© 2026 ServiceNow, Inc. All rights reserved. 47
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+|  |  | Security incident shift handover | March 12, 2026 |
+|  |  | Security incident retrieval | March 12, 2026 |
+|  |  | Security metrics analysis | March 12, 2026 |
+| Now Assist for Software Asset Management (SAM) | Skill | Publisher compliance summarization | December 11, 2025 |
+|  |  | Product compliance summarization | December 11, 2025 |
+|  |  | Recommended actions | December 11, 2025 |
+|  |  | SaaS user resolution | December 11, 2025 |
+|  |  | Error log summarization | April 09, 2026 |
+|  |  | Error resolution recommendation | April 09, 2026 |
+|  |  | Contract entitlement data extraction | April 09, 2026 |
+|  |  | Product match reviewer | June 11, 2026 |
+|  |  | Software normalization | June 11, 2026 |
+|  | Agentic workflow | Reclamation rule creation | December 11, 2025 |
+|  |  | Removal candidate evaluation | December 11, 2025 |
+|  |  | EAP doc summarization | December 11, 2025 |
+|  |  | Feedback summarization | December 11, 2025 |
+|  |  | Identify similar records | December 11, 2025 |
+|  |  | Multi feedback summarization | December 11, 2025 |
+|  |  | Planning item doc summarization | December 11, 2025 |
+|  |  | Project doc summarization | December 11, 2025 |
+|  |  | Project insights generation | December 11, 2025 |
+
+Effective
+Product Type Asset name
+date
+Refine records December
+11, 2025
+Target generation December
+11, 2025
+Agentic Create stories December
+workflow 11, 2025
+Monitor project tasks December
+11, 2025
+Now Assist for Sourcing and Skill Negotiation summarization December
+Procurement Operations (SPO) 11, 2025
+Procurement case December
+summarization 11, 2025
+Purchase requisition December
+summarization 11, 2025
+Sourcing event summarization December
+11, 2025
+Sourcing request December
+summarization 11, 2025
+Now Assist for Supplier Lifecycle Skill Supplier case summarization December
+Operations (SLO) 11, 2025
+Supplier performance March 12,
+summarization 2026
+Now Assist for Third-party Risk Skill TPRM issue summarization December
+Management (TPRM) 11, 2025
+Now Assist for Vulnerability Skill Generate remediation December
+Response assistance 11, 2025
+Now Assist recommendation December
+11, 2025
+SEM insights December
+11, 2025
+SPC setup connector December
+11, 2025
+Suggest vulnerability solutions December
+11, 2025
+Vulnerable item deduplication December
+11, 2025
+Now Assist for Workplace Service Skill Workplace case March 12,
+Delivery (WSD) summarization 2026
+Now Assist for Zero Copy Connector Skill ERP data discovery December
+11, 2025
+ERP data query December
+11, 2025
+© 2026 ServiceNow, Inc. All rights reserved. 48
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+|  |  | Refine records | December 11, 2025 |
+|  |  | Target generation | December 11, 2025 |
+|  | Agentic workflow | Create stories | December 11, 2025 |
+|  |  | Monitor project tasks | December 11, 2025 |
+| Now Assist for Sourcing and Procurement Operations (SPO) | Skill | Negotiation summarization | December 11, 2025 |
+|  |  | Procurement case summarization | December 11, 2025 |
+|  |  | Purchase requisition summarization | December 11, 2025 |
+|  |  | Sourcing event summarization | December 11, 2025 |
+|  |  | Sourcing request summarization | December 11, 2025 |
+| Now Assist for Supplier Lifecycle Operations (SLO) | Skill | Supplier case summarization | December 11, 2025 |
+|  |  | Supplier performance summarization | March 12, 2026 |
+| Now Assist for Third-party Risk Management (TPRM) | Skill | TPRM issue summarization | December 11, 2025 |
+| Now Assist for Vulnerability Response | Skill | Generate remediation assistance | December 11, 2025 |
+|  |  | Now Assist recommendation | December 11, 2025 |
+|  |  | SEM insights | December 11, 2025 |
+|  |  | SPC setup connector | December 11, 2025 |
+|  |  | Suggest vulnerability solutions | December 11, 2025 |
+|  |  | Vulnerable item deduplication | December 11, 2025 |
+| Now Assist for Workplace Service Delivery (WSD) | Skill | Workplace case summarization | March 12, 2026 |
+| Now Assist for Zero Copy Connector | Skill | ERP data discovery | December 11, 2025 |
+|  |  | ERP data query | December 11, 2025 |
+
+Effective
+Product Type Asset name
+date
+Now Assist in Contract Management Skill Contracts query enhancer December
+11, 2025
+Duration to days converter December
+11, 2025
+Search contract with contextual December
+input 11, 2025
+Conversational contract search March 12,
+and insights 2026
+Now Assist in Platform Analytics Skill Analytics follow-up generation December
+11, 2025
+Analytics hidden insights December
+generation 11, 2025
+Analytics insights generation December
+11, 2025
+Analytics query generation December
+11, 2025
+Dashboard and visualization January
+export 20, 2026
+Now Assist Platform Skill Requester approval checklist February
+5, 2026
+AI agents December
+11, 2025
+Conversational Help December
+11, 2025
+Custom skills December
+11, 2025
+Extract information from March 12,
+documents 2026
+Multimodal chat March 12,
+2026
+Now Assist Multi-Turn Catalog December
+Ordering 11, 2025
+Now Assist Q&A Genius Results December
+11, 2025
+Now Assist Topics December
+11, 2025
+Requester approval checklist February
+5, 2026
+Subflows and actions December
+11, 2025
+© 2026 ServiceNow, Inc. All rights reserved. 49
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Type** | **Asset name** | **Effective date** |
+|---|---|---|---|
+| Now Assist in Contract Management | Skill | Contracts query enhancer | December 11, 2025 |
+|  |  | Duration to days converter | December 11, 2025 |
+|  |  | Search contract with contextual input | December 11, 2025 |
+|  |  | Conversational contract search and insights | March 12, 2026 |
+| Now Assist in Platform Analytics | Skill | Analytics follow-up generation | December 11, 2025 |
+|  |  | Analytics hidden insights generation | December 11, 2025 |
+|  |  | Analytics insights generation | December 11, 2025 |
+|  |  | Analytics query generation | December 11, 2025 |
+|  |  | Dashboard and visualization export | January 20, 2026 |
+| Now Assist Platform | Skill | Requester approval checklist | February 5, 2026 |
+|  |  | AI agents | December 11, 2025 |
+|  |  | Conversational Help | December 11, 2025 |
+|  |  | Custom skills | December 11, 2025 |
+|  |  | Extract information from documents | March 12, 2026 |
+|  |  | Multimodal chat | March 12, 2026 |
+|  |  | Now Assist Multi-Turn Catalog Ordering | December 11, 2025 |
+|  |  | Now Assist Q&A Genius Results | December 11, 2025 |
+|  |  | Now Assist Topics | December 11, 2025 |
+|  |  | Requester approval checklist | February 5, 2026 |
+|  |  | Subflows and actions | December 11, 2025 |
+
+Now Assist skills
+Now Assist products provide generative AI skills that are tailored to meet the needs of users in
+different workflows.
+The following sections describe the available Now Assist skills.
+By default, all skills exist in the global domain. When you use Now Assist in a domain-separated
+environment, users are only able to access data in their domain. For example, if a user uses
+the summarization skill, Now Assist only uses material that exists in the user's domain when
+generating that summary. Additionally, there is no co-mingling of data for domain-separated
+instances when using generative AI skills. The data resides only on the instance, and the shared
+services used for generative AI do not persist any requests (prompts) and responses. For more
+information, see Domain separation in the Now Assist Admin console. (Note that global domain is
+not the same as global scope. For more information, see Exploring Next Experience pickers .)
+Important: Some Now Assist skills, agents, and agentic workflows are turned on by
+default. For more information, see Now Assist skills, agents, and agentic workflows on by
+default.
+Note: Some workflow skills support Now Assist functionality. Deactivating these skills may
+negatively impact some features.
+Available skills by workflow
+Workflow Product Available skills
+Technology Now Assist for
+•Configuration item (CI) summarization
+Configuration
+Management Database •Manage duplicate CIs
+(CMDB)
+•Service Graph Connector diagnosis
+Technology Now Assist for Enterprise
+•ADR DOC summarization and actions
+Architecture (EA)
+•Business application insights
+•Diagram change analysis
+•Refine text
+•Register a business application
+•Register a digital integration
+Technology Now Assist for Extract data from utility invoices
+Operational Sustainability
+Management
+Technology Now Assist for Hardware
+•Generate hardware asset insights
+Asset Management
+(HAM)
+Technology Now Assist for Integrated
+•Common control objective creation
+Risk Management (IRM)
+•Control objective impact analyzer
+•Control objective rationalization and
+deduplication
+© 2026 ServiceNow, Inc. All rights reserved. 50
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+| Technology | Now Assist for Configuration Management Database (CMDB) | •Configuration item (CI) summarization •Manage duplicate CIs •Service Graph Connector diagnosis |
+| Technology | Now Assist for Enterprise Architecture (EA) | •ADR DOC summarization and actions •Business application insights •Diagram change analysis •Refine text •Register a business application •Register a digital integration |
+| Technology | Now Assist for Operational Sustainability Management | Extract data from utility invoices |
+| Technology | Now Assist for Hardware Asset Management (HAM) | •Generate hardware asset insights |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+•Use Recommendation of similar control
+objectives skill to generate suggestions
+•Issue summarization
+•Recommendations for regulatory alert
+impacted areas
+•Recommendation of similar control
+objectives
+•Regulatory alert summarization
+•Regulatory alert impacted citations
+•Regulatory alert impacted control
+objectives
+•Regulatory alert impacted controls
+•Regulatory alert impacted policies
+•Risk assessment summarization
+•Risk event summarization
+Risk event summarization in the classic UI
+Technology Now Assist for IT
+•Alert analysis
+Operations Management
+(ITOM) •Alert investigation
+•Analyze service health
+•Analyze service observability dashboard
+•LEAP installer
+•Service Mapping Candidate
+•Service mapping candidates Impact
+Technology Now Assist for IT Service
+•Change request risk explanation
+Management (ITSM)
+•Change request summarization
+•Chat reply recommendation
+•Chat summarization
+•Email recommendation
+•Incident assist
+•Incident sentiment analysis
+•Incident summarization
+•Investigate boot time issues
+•Investigate Zoom call quality issues
+•KB generation
+© 2026 ServiceNow, Inc. All rights reserved. 51
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+|  |  | •Use Recommendation of similar control objectives skill to generate suggestions •Issue summarization •Recommendations for regulatory alert impacted areas •Recommendation of similar control objectives •Regulatory alert summarization •Regulatory alert impacted citations •Regulatory alert impacted control objectives •Regulatory alert impacted controls •Regulatory alert impacted policies •Risk assessment summarization •Risk event summarization Risk event summarization in the classic UI |
+| Technology | Now Assist for IT Operations Management (ITOM) | •Alert analysis •Alert investigation •Analyze service health •Analyze service observability dashboard •LEAP installer •Service Mapping Candidate •Service mapping candidates Impact |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+•Release notes generation
+•Request activity response generation
+•Requested item activity response
+generation
+•Resolution notes generation
+•Sidebar discussion summarization
+•Suggested steps generation
+Technology Now Assist for Operational Search for a related record
+Technology Manager
+(OTM)
+Technology Now Assist for Operational
+•OT incident summarization
+Technology Service
+Management (OTSM) •OT resolution notes generation
+Technology Now Assist for Privacy
+•Control objective impact analyzer
+Management
+•Common control objective creation
+•Recommendation of similar control
+objectives
+•Risk assessment summary
+Technology Now Assist for Security
+•Correlation insights generation
+Incident Response
+•Generate content for shift handover
+•Post-incident analysis
+•Resolution notes generation
+•Security incident quality assessment
+•Security incident recommended actions
+•Security incident summarization
+•Security operations metrics analysis
+Technology Now Assist for Software
+•Extract entitlements from contract
+Asset Management
+(SAM) •Error log summarization
+•Error resolution recommendation
+•Publisher compliance summarization
+•Product compliance summarization
+•Recommended actions
+•SaaS user resolution
+© 2026 ServiceNow, Inc. All rights reserved. 52
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+|  |  | •Release notes generation •Request activity response generation •Requested item activity response generation •Resolution notes generation •Sidebar discussion summarization •Suggested steps generation |
+| Technology | Now Assist for Operational Technology Manager (OTM) | Search for a related record |
+| Technology | Now Assist for Operational Technology Service Management (OTSM) | •OT incident summarization •OT resolution notes generation |
+| Technology | Now Assist for Privacy Management | •Control objective impact analyzer •Common control objective creation •Recommendation of similar control objectives •Risk assessment summary |
+| Technology | Now Assist for Security Incident Response | •Correlation insights generation •Generate content for shift handover •Post-incident analysis •Resolution notes generation •Security incident quality assessment •Security incident recommended actions •Security incident summarization •Security operations metrics analysis |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+•Contract entitlement data extraction
+•Product match reviewer
+•Software normalization
+Technology Now Assist for Strategic
+•Create a demand
+Portfolio Management
+(SPM) •EAP doc summarization
+•Identify similar records
+•Multi feedback summarization
+•Planning item doc summarization
+•Project doc summarization
+•Project insights generation
+•Refine records
+•Story generation
+•Target generation
+•Write planning item
+Technology Now Assist for Third- TPRM issue summarization
+party Risk Management
+(TPRM)
+Technology Now Assist for Vulnerability
+•Approval recommendation
+Response
+•Now Assist recommendation
+•SEM insights
+•SPC setup connector
+•Suggest vulnerability solutions
+•Vulnerable item deduplication
+Customer Now Assist for Customer
+•Activity response generation
+Service Management
+(CSM) •Automated quality assurance
+•Case summarization
+•Chat recommendation
+•Chat summarization
+•Customer summarization
+•Email recommendation
+•KB generation
+•Resolution notes generation
+© 2026 ServiceNow, Inc. All rights reserved. 53
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+|  |  | •Contract entitlement data extraction •Product match reviewer •Software normalization |
+| Technology | Now Assist for Strategic Portfolio Management (SPM) | •Create a demand •EAP doc summarization •Identify similar records •Multi feedback summarization •Planning item doc summarization •Project doc summarization •Project insights generation •Refine records •Story generation •Target generation •Write planning item |
+| Technology | Now Assist for Third- party Risk Management (TPRM) | TPRM issue summarization |
+| Technology | Now Assist for Vulnerability Response | •Approval recommendation •Now Assist recommendation •SEM insights •SPC setup connector •Suggest vulnerability solutions •Vulnerable item deduplication |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+•Sentiment analysis case
+•Sentiment analysis dashboard
+•Sentiment analysis for email interactions
+•Sidebar summarization
+•Special handling notes summarization
+•Suggested steps generation
+•Trending topics dashboard
+Customer Now Assist for Field
+•KB generation
+Service Management
+(FSM) •Sidebar summarization
+•Work order task summarization
+Customer Now Assist for Financial
+•Case summarization
+Services Operations
+(FSO) •Disputes intake via Virtual Agent
+Customer Now Assist for Order Order summarization
+Management
+Customer Now Assist for Public
+•Government case summarization
+Sector Digital Services
+(PSDS) •Chat summarization
+Customer Now Assist for
+•Account onboarding case summarization
+Telecommunications,
+Media and Technology •Customer play summary
+(TMT)
+•Customer service summary
+•Engagement summary
+•Internal play summary
+•KB generation
+•Resolution notes generation
+•Risk signal and issues summary
+•Service problem case summarization
+•Success initiative summary
+•Test summarization
+•Touchpoint summary
+•Transform mapping assist
+© 2026 ServiceNow, Inc. All rights reserved. 54
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+|  |  | •Sentiment analysis case •Sentiment analysis dashboard •Sentiment analysis for email interactions •Sidebar summarization •Special handling notes summarization •Suggested steps generation •Trending topics dashboard |
+| Customer | Now Assist for Field Service Management (FSM) | •KB generation •Sidebar summarization •Work order task summarization |
+| Customer | Now Assist for Financial Services Operations (FSO) | •Case summarization •Disputes intake via Virtual Agent |
+| Customer | Now Assist for Order Management | Order summarization |
+| Customer | Now Assist for Public Sector Digital Services (PSDS) | •Government case summarization •Chat summarization |
+| Customer | Now Assist for Telecommunications, Media and Technology (TMT) | •Account onboarding case summarization •Customer play summary •Customer service summary •Engagement summary •Internal play summary •KB generation •Resolution notes generation •Risk signal and issues summary •Service problem case summarization •Success initiative summary •Test summarization •Touchpoint summary •Transform mapping assist |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+Employee Now Assist for Employee
+•Requested item summarization for
+Experience
+approvals
+•Request summarization for approvals
+•Case summarization for approvals
+Employee Now Assist for Health and Incident summarization
+Safety
+Employee Now Assist for HR Service
+•Case summarization
+Delivery (HRSD)
+•Chat reply recommendation
+•Chat summarization
+•Email recommendation
+•ER case summarization
+•ER interview summarization
+•KB generation
+•Employee information summarization
+•Resolution notes generation
+•Sentiment analysis for HR case
+•Sentiment analysis for HR task
+•Sidebar discussion summarization
+Employee Now Assist for Legal
+•Get category of the legal request
+Service Delivery (LSD)
+•Legal matter summarization
+•Legal request summarization
+•Triage legal request AI Search
+•Triage legal request capability
+Employee Now Assist in Contract
+•Contract analysis
+Management
+•Contract metadata extraction
+•Contract obligation extraction
+•Contracts query classifier
+•Conversational contract search and
+insights
+© 2026 ServiceNow, Inc. All rights reserved. 55
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+| Employee | Now Assist for Employee Experience | •Requested item summarization for approvals •Request summarization for approvals •Case summarization for approvals |
+| Employee | Now Assist for Health and Safety | Incident summarization |
+| Employee | Now Assist for HR Service Delivery (HRSD) | •Case summarization •Chat reply recommendation •Chat summarization •Email recommendation •ER case summarization •ER interview summarization •KB generation •Employee information summarization •Resolution notes generation •Sentiment analysis for HR case •Sentiment analysis for HR task •Sidebar discussion summarization |
+| Employee | Now Assist for Legal Service Delivery (LSD) | •Get category of the legal request •Legal matter summarization •Legal request summarization •Triage legal request AI Search •Triage legal request capability |
+| Employee | Now Assist in Contract Management | •Contract analysis •Contract metadata extraction •Contract obligation extraction •Contracts query classifier •Conversational contract search and insights |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+Employee Now Assist for Workplace
+•Reserve Space Virtual Agent topic
+Service Delivery (WSD)
+•Workplace Case Summarization
+Creator Now Assist for Creator
+•App generation
+•Build Agent
+•Catalog item generation
+•App summary generation
+•Client script summarization
+•Code Assist autocomplete
+•Code Assist edit
+•Code assist summarization
+•Code Assist generation
+•Event handler generation
+•Experience generation
+•Flow generation
+•Flow generation with images
+•Flow recommendations
+•Flow summarization
+•Mobile card generation
+•Playbook generation
+•Playbook generation with images
+•Playbook recommendations
+•Playbook summarization
+•Process inefficiency highlights
+•Robotic Process Automation (RPA) bot
+generation
+•Spoke generation
+•Test generation
+•Work notes analysis
+Platform Now Assist Platform
+•Article optimization
+•Complete record generation
+•Conversational Help
+•Document summarization
+•Dynamic Guidance
+© 2026 ServiceNow, Inc. All rights reserved. 56
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+| Employee | Now Assist for Workplace Service Delivery (WSD) | •Reserve Space Virtual Agent topic •Workplace Case Summarization |
+| Creator | Now Assist for Creator | •App generation •Build Agent •Catalog item generation •App summary generation •Client script summarization •Code Assist autocomplete •Code Assist edit •Code assist summarization •Code Assist generation •Event handler generation •Experience generation •Flow generation •Flow generation with images •Flow recommendations •Flow summarization •Mobile card generation •Playbook generation •Playbook generation with images •Playbook recommendations •Playbook summarization •Process inefficiency highlights •Robotic Process Automation (RPA) bot generation •Spoke generation •Test generation •Work notes analysis |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+•Extract information from documents
+•GAF skills
+•Identify duplicate articles
+•Knowledge content recommendation
+•Multimodal chat
+•Navigation
+•New column data generation
+•Potential knowledge gaps
+•Requester approval checklist
+•ServiceNow Lens
+•TextToResult
+Data and Now Assist skills for AI Data Explorer skills
+Analytics Analytics
+•Analytics exploration
+•Exploration summarization
+•Refine text in exploration
+Query Generation skills
+•Analytics query generation
+•Analytics insight generation
+•Analytics follow up generation
+•Analytics hidden insight generation
+Skills installed by default with Platform:
+•Dashboard and visualization export
+•Data visualization generation
+Finance & Supply Now Assist for Accounts
+•Invoice case summarization
+Chain Payable Operations
+(APO) •Invoice inquiry solution generator
+•Purchase order line mapping
+•Purchase order summarization
+Finance & Supply Now Assist for Supplier
+•Email response
+Chain Lifecycle Operations
+(SLO) •Sentiment analysis
+•Supplier case summarization
+© 2026 ServiceNow, Inc. All rights reserved. 57
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+|  |  | •Extract information from documents •GAF skills •Identify duplicate articles •Knowledge content recommendation •Multimodal chat •Navigation •New column data generation •Potential knowledge gaps •Requester approval checklist •ServiceNow Lens •TextToResult |
+| Data and Analytics | Now Assist skills for Analytics | AI Data Explorer skills •Analytics exploration •Exploration summarization •Refine text in exploration Query Generation skills •Analytics query generation •Analytics insight generation •Analytics follow up generation •Analytics hidden insight generation Skills installed by default with Platform: •Dashboard and visualization export •Data visualization generation |
+| Finance & Supply Chain | Now Assist for Accounts Payable Operations (APO) | •Invoice case summarization •Invoice inquiry solution generator •Purchase order line mapping •Purchase order summarization |
+
+Available skills by workflow (continued)
+Workflow Product Available skills
+•Supplier summarization
+•Supplier performance summarization
+Finance & Supply Now Assist for Sourcing
+•Negotiation summarization
+Chain and Procurement
+Operations (SPO) •Procurement case summarization
+•Purchase requisition summarization
+•Sourcing event summarization
+•Sourcing request summarization
+App Engine Now Assist for App Custom app record summarization
+Engine
+Impact Impact
+•Jumpstart Your Now Assist for Creator
+The Impact workflow •Jumpstart Your Now Assist in Document
+contains technical Intelligence
+accelerators that can
+•Jumpstart Your Now Assist in Virtual Agent
+help you get started more
+quickly with some Now •Jumpstart Your Now Assist Skill Kit
+Assist features.
+Vault Now Assist for Vault
+•Check role access
+•Generate custom data pattern
+•Schedule Data Discovery job
+Other Now Assist for Zero Copy
+•ERP data discovery
+Connector
+•ERP data query
+Now Assist skills in the Platform workflow
+Most Now Assist generative AI products include skills in the Platform workflow, such as product
+navigation. Some Now Assist products include skills for the conversational user and platform
+experience, as well as knowledge article recommendations.
+Auto activation of generative AI platform skills
+Starting with the Zurich Patch 4 release, some generative AI platform skills for Now Assist will be
+active by default. This is applicable for commercial and regulated market customers.
+•New users: When you install the Now Assist plugins, the related Now Assist skills will be turned
+on automatically.
+•Existing users: When you upgrade the Now Assist plugins, any unused skill will turn on.
+© 2026 ServiceNow, Inc. All rights reserved. 58
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** | **Available skills** |
+|---|---|---|
+|  |  | •Supplier summarization •Supplier performance summarization |
+| Finance & Supply Chain | Now Assist for Sourcing and Procurement Operations (SPO) | •Negotiation summarization •Procurement case summarization •Purchase requisition summarization •Sourcing event summarization •Sourcing request summarization |
+| App Engine | Now Assist for App Engine | Custom app record summarization |
+| Impact | Impact The Impact workflow contains technical accelerators that can help you get started more quickly with some Now Assist features. | •Jumpstart Your Now Assist for Creator •Jumpstart Your Now Assist in Document Intelligence •Jumpstart Your Now Assist in Virtual Agent •Jumpstart Your Now Assist Skill Kit |
+| Vault | Now Assist for Vault | •Check role access •Generate custom data pattern •Schedule Data Discovery job |
+| Other | Now Assist for Zero Copy Connector | •ERP data discovery •ERP data query |
+
+1.If you have installed the plugins but never configured, activated or changed roles for a skill,
+any skill with 'Default On' status will be enabled individually, after the upgrade.
+2. If you have modified any role for a skill, turned it off and then back on, that skill will stay
+turned off after the upgrade; maintaining your last known selection.
+Some skills, such as the Group Action Framework (GAF) skills, support Platform functionality and
+may require specific configuration.
+Article optimization
+Article optimization skill in ServiceNow AI Platform provides recommendations for improving
+the quality and health of knowledge articles, providing actionable feedback to authors and
+managers. The recommendations for knowledge articles become available after you activate the
+Article Optimization skills in Now Assist Admin.
+Article ptimization is a Platform skill that is enabled by the admin from the Knowledge feature
+card. The skill allows agents and authors to review and use article optimization recommendations
+to improve the quality and health of their knowledge articles.
+For more information, see Review and optimize articles using Article Optimization .
+Catalog item form slot-fill
+With the catalog item form slot-fill skill, Now Assist can automatically complete catalog item forms
+based on what users search for.
+For instance, if requester looks up a standard laptop with 256 GB storage in silver color, the
+resulting form will have those specifications already filled in provided they’re part of the form.
+Requester can quickly review these pre-filled forms, making requests faster and more efficient.
+To enable this feature, activate the catalog item form slot-fill skill so that requesters see their
+search criteria reflected in the catalog item request forms. As soon as requesters searches for an
+item, relevant fields in the form are populated with their search information, minimizing repetitive
+entry and streamlining the request process.
+Pre-filled fields show AI icons to help users validate values populated by Now Assist.
+Note: Order guides, as well as the following variables, are not supported:
+•MRVS (Multi-Row Variable Sets)
+•Custom and custom with labels
+•Attachments
+•Masked
+•Break
+•Container
+•UI page
+•HTML
+Now Assist Conversational Help
+This skill uses Generative AI application capabilities to provide answers to the questions on the
+Now Assist panel.
+https://player.vimeo.com/video/1088792812?
+h=bceb334712&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479.
+© 2026 ServiceNow, Inc. All rights reserved. 59
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+Important: This Now Assist skill is turned on by default. The skill will be automatically
+available to appropriate role users for the application. For more information, see Now Assist
+skills, agents, and agentic workflows on by default.
+The Now Assist Conversational Help skill displays as Get Help on the Now Assist panel.
+Note: The Get Help feature is available as a part of Now Assist entitlements and no new
+subscription is required. The feature is enabled by default and you can turn it off in the Now
+Assist Admin Settings. The ServiceNow Now LLM Service (Large Language Model) is the
+default model provider for this Now Assist skill to retrieve precise answers to the users'
+questions.
+You can ask your question in two ways:
+•Select Get Help skill and submit a query to use the help option in the Now Assist panel.
+•Submit your query directly in the Now Assist panel. It will perform discovery and find the most
+appropriate skill among the listed, based on the keywords you entered. This discovered skill is
+used to retrieve answers for your queries.
+Note: The available skills displayed in the Now Assist panel can be customized in
+consultation with the integration teams.
+How Conversational Help works
+Your query goes through the following steps to retrieve the best response.
+1.AI search
+The query is be sent to a central ServiceNow instance, where AI Search will search the
+knowledge table that stores content from product doc content.
+We use Instance Data Replication (IDR) that synchronizes product documentation content
+from Now Support instances.
+Note: Multiple central ServiceNow instances are deployed across three regions: US
+East or US West, EMEA, and APJC.
+2. The top matching chunks (or records) along with the user’s query, are sent to the Now Assist
+Q&A Genius Result configuration to generate a meaningful, contextual answer.
+3. Re-ranking
+The Now Assist Q&A, an out of box (OOB) capability, re-ranks the retrieved chunks to ensure
+better relevance.
+4.Cache lookup
+◦If the user query exists in the cache, the pre-stored answer is returned.
+◦If the query is not cached, the query and re-ranked chunks are sent to Now LLM to generate
+a meaningful answer.
+The Now LLM retrieves the most relevant result from https://www.servicenow.com/docs/ portal
+and displays it in the same panel.
+Note: Effective from this release, the query will retrieve results based exclusively on the
+release version of the user's current instance. This enhancement is integrated into the
+query process to ensure the delivery of precise results that reflect the latest updates and
+features.
+© 2026 ServiceNow, Inc. All rights reserved. 60
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+For more information, see Fetch end points in Now Assist Conversational Help skills.
+Now Assist extract information from documents
+The extract information from documents skill allows you to use Now Assist predictions to extract
+information from document and image files.
+Now Assist uses generative AI capabilities to extract values from the document based on the
+fields, tables, and questions defined in the skill’s use case. The extracted information is turned
+into structured data that can be used in the platform.
+Agents can use the Document Intelligence workspace to review and confirm the extracted
+information.
+© 2026 ServiceNow, Inc. All rights reserved. 61
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Now Assist Panel — Conversational Help opening screen]**
+> The Now Assist slide-out panel showing the AI greeting: "Hi! How can I help you with your work today?" with suggested actions: generate a kb article, Generate resolution notes, Get Help, Suggest configuration items for a change. Six quick-action buttons: Generate KB Article, Generate resolution notes, Summarize a record, Summarize conversation, Suggest configuration items for a change, and **Get Help** (highlighted in blue). Text input field "Reply to Now Assist..." at the bottom with a send button.
+
+
+Extracted information in the Document Intelligence workspace
+For more information, see Review extracted information in the Document Intelligence workspace.
+Knowledge content recommendation
+Knowledge generative AI skills on the ServiceNow AI Platform provides recommendations for
+editing a knowledge article. Once activated, this skill is available on the Now Assist context
+menu.
+The Now Assist Knowledge content recommendation is a Platform skill that is enabled by the
+admin from the Knowledge feature card. The skill allows agents and authors to use the Now
+Assist context menu to elaborate and shorten content in a knowledge article.
+The Now Assist context menu in Knowledge Management
+For more information, see Edit an article using the Now Assist context menu .
+Potential knowledge gaps
+The Potential Knowledge Gap helps in finding missing or incomplete knowledge coverage by
+analyzing service interactions. Gap recommendations become available after you activate the
+Knowledge Gaps skills in Now Assist Admin.
+The Knowledge Gaps feature (also known as Potential Gaps) helps knowledge managers
+and service teams discover missing or insufficient knowledge articles by analyzing service
+case and incident patterns. When the relevant skills are activated, Now Assist generates gap
+recommendations to guide the creation or improvement of knowledge content.
+For more information, see Manage potential knowledge gaps
+© 2026 ServiceNow, Inc. All rights reserved. 62
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Document Intelligence workspace — Invoice Q&A]**
+> The Document Intelligence workspace with a CPB Software (Germany) GmbH invoice to Musterkunde AG for WMACCESS Internet services (Feb 1–29, 2024). Now Assist panel summary: basic fee for wmView €130.00, various transaction fees, total €381.12, VAT 19% = €72.41, gross total €453.53. "Summarise the document" button and text input visible. Disclaimer: "Some answers generated by AI. Be sure to check for accuracy."
+
+> **[Screenshot: Now Assist context menu in Knowledge Management]**
+> The ServiceNow Knowledge article editor (KCS Article KB0010583 v0.01) with a floating Now Assist context menu over selected text, offering two options: **Elaborate** (expand the content) and **Shorten** (condense the content).
+
+
+Navigation
+Use the navigation skill in Now Assist to take you where you want to go on the ServiceNow AI
+Platform.
+Overview of navigation
+Navigation is a skill in the Now Assist panel that handles record search requests during a chat.
+When you ask for records or tables in plain language Now Assist shows you links in the chat to
+take you to the best match to your request. For example, you could enter Show me incident
+records.
+In the following figure, the user entered navigate me to incidents in the Now Assist
+panel. Now Assist responds with a link to the Incidents table.
+Navigation query and response in the Now Assist panel
+When you click the link, the list of all records in the Incidents table displays.
+Navigating to the Incidents table from the Now Assist panel
+© 2026 ServiceNow, Inc. All rights reserved. 63
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Navigation — Query and response]**
+> ServiceNow Admin Home dashboard with the Now Assist panel open. User typed "navigate me to incidents." Now Assist responded: "This is where you can view the records" with a **View Incident** button. Admin home shows open incidents and open request items widgets (both showing "No data available").
+
+> **[Screenshot: Incidents table navigation result]**
+> The full Incidents list view (All > Keywords = emails) showing columns: Number, Opened, Short description, Caller, Priority, State, Category. Sample records: INC0010253 (Language issue, Abraham Lincoln, In Progress, Software), INC0010248 (Order stuck in load status, Alejandra Pranatt, New, Inquiry/Help), INC0009005 (Email server is down, David Miller, Critical, New, Software), and others. Now Assist panel retains conversation history on the right.
+
+
+Refining your results
+You can refine your results further by using more detailed requests. If you enter Show me all
+incident records whose status is Complete, Now Assist shows you only the
+records in the table with a Complete status.
+In the following example, the user asks for all P1 incidents that are in the New state.
+A refined query of the Incidents table
+The number of results is based on how many potential results Now Assist finds in response
+to your request. If Now Assist finds more than 10 results, the list is paginated. In the following
+example, Now Assist finds two possible tables: the Catalog Item table and the Catalog table.
+Multiple table results in the Now Assist panel
+If Now Assist does not understand your request, you receive an error message asking you to
+rephrase your request. You can also choose to navigate to a "best guess" based on your previous
+request.
+© 2026 ServiceNow, Inc. All rights reserved. 64
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Refined query — P1 Incidents in New state]**
+> Incidents list filtered to Priority=1-Critical AND State=New: INC0009005 (Email server is down, David Miller, Critical, New, Software) and INC0007001 (Employee payroll application server is down, David Miller, Critical, New, Hardware). Now Assist panel shows user asked "show me all P1 incidents whose state is new" with a resulting View Incident link.
+
+> **[Screenshot: Multiple table results]**
+> Now Assist responding to "Show me active catalog items" with: "There are 2 potential tables matching what you are looking for. Which table would you like to view?" Two buttons: **Catalog Item: sc_cat_item** and **Catalog: sc_catalog**.
+
+
+Rephrase request message in the Now Assist panel
+Now Assist in Standard Ticket Page
+The Now Assist in Standard Ticket Page skill allows you to display summaries generated by Now
+Assist, providing overviews of recent activities and ticket details.
+When this skill is active, the standard ticket page on the Service Portal displays a Summarize
+button. If requesters want to see the ticket activity and a summary of information generated by
+Now Assist, they can select the Summarize button.
+The Summarize button appears when at least one field is configured. If no field values are
+configured, the button does not appear, regardless of whether the Now Assist in Standard Ticket
+Page skill is active.
+Requester Approval Checklist skill
+®
+The Requester Approval Checklist skill in the ServiceNow AI Platform generates a structured
+checklist by mapping real-time request data against your organization’s knowledge articles.
+Important: This Now Assist skill is turned on by default. The skill will be automatically
+available to appropriate role users for the application. For more information, see Now Assist
+skills, agents, and agentic workflows on by default.
+This skill is available within Now Assist Agents for Requester v3.1 and is designed to provide
+instant, data-backed decision support across in-product, agentic, and workflow experiences.
+The skill uses information from the following sources to promote accuracy:
+Knowledge articles
+Defines the evaluation criteria based on your company policy.
+System data
+Fetches requester profiles and historical data from ServiceNow.
+Approval request
+Analyze the details submitted in a live request.
+Requester Approval Checklist structure
+The output is presented in a two-step format: Criteria (what is required) and Reason (why it
+passed, failed, or has missing information). Each item has one of the following statuses: Met, Not
+met, or Unknown.
+© 2026 ServiceNow, Inc. All rights reserved. 65
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Rephrase request error message]**
+> Now Assist panel showing: "Sorry, I am not able to generate proper filters based on your request. Do you want to rephrase your request to try again or directly navigate to the table list to add filters on your own?" Two action buttons: **Rephrase request** and **Navigate to table list**. Incidents list view visible in the background.
+
+
+Note: All referenced knowledge base articles are provided as links at the end of the
+checklist for easy verification.
+Key skill considerations
+Integration
+The skill is built for workflows and agentic experiences, but doesn't support follow-
+up questions and answers.
+Decision support
+The skill provides information only. It doesn't perform actions like Approve, Reject,
+or Comment.
+Flexibility and control
+The Requester Approval Checklist respects the approval configuration to provide
+flexibility and control.
+For more information, see Platform Approval assistance AI agent and Configure Service Portal
+Approval Configuration record .
+Smart Documents skill
+Accelerate document insights with instant summaries, interactive Q&A, and FAQs using Now
+Assist in Document Management.
+Smart Documents Skill overview
+The Smart Documents skill provides a concise summary of the document associated with a
+workflow, along with interactive Q&A and FAQs, enabling you to quickly understand the content,
+explore key insights and get answers to specific questions.
+You can summarize a document in a workspace, ask interactive questions, and view FAQs.
+To learn how, see Generate summary and ask questions using Now Assist in Document
+Management
+The following diagram shows that by using the Smart Document skill, you can quickly get insights
+from a document, such as a white paper, report, policy, contract, or case file.
+© 2026 ServiceNow, Inc. All rights reserved. 66
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Smart Documents skill — Invoice summary in Now Assist panel]**
+> Document Management workspace showing a CPB Software invoice (sample-invoice(2).pdf, page 1 of 3) with line items: Basic Fee services, Basic Fee additional user accounts, Basic Free wmPos, Change of user accounts, and Transaction Fees T2–T9 (all €0.00). Now Assist panel displays an AI-generated document summary with billing period, service details, and calculated totals. Disclaimer: "Some answers generated by AI. Be sure to check for accuracy."
+
+
+Availability
+Now Assist Products and Workflows
+Workflow Product
+Technology Now Assist for IT Service Management (ITSM)
+Customer
+Now Assist for Customer Service Management (CSM)
+Now Assist for Field Service Management (FSM)
+Employee Now Assist for HR Service Delivery (HRSD)
+Governance,Risk, and Compliance Now Assist for Third-party Risk Management (TPRM)
+Now Assist Q&A Genius Results
+The Now Assist Q&A Genius Results skill enables users to get answers to their questions from
+knowledge articles, external sources, and uploaded files directly in the Now Assist panel.
+Overview of Now Assist Q&A Genius Results
+Now Assist Q&A Genius Results answers your questions in the Now Assist panel using content
+from knowledge base articles, external sources, such as Microsoft SharePoint, Google Drive,
+and Confluence Cloud, and files you upload. You can also attach images or documents to get
+answers grounded in that content. Answers are summarized from the most relevant content
+across one or more sources, so you get a single, consolidated response instead of a list of
+articles to read through. Each response shows the source so you can refer back to the original
+article or document. If the skill can't find a relevant answer, it returns a no-result response instead
+of a generic reply.
+The skill supports multi-turn conversations by retaining your conversation history so that follow-
+up questions are answered in the context of what you previously asked without re-uploading your
+file or repeating yourself.
+The skill is part of the Platform workflow and is turned on by default. To turn it off, navigate to Now
+Assist Admin > Now Assist Skills > Platform and select Deactivate skill on the skill card.
+Use cases
+Now Assist Q&A Genius Results is useful in the following use cases:
+•Search across knowledge articles and external sources such as SharePoint or Confluence to
+get a single consolidated answer.
+•Ask follow-up questions to build on a previous answer within the same session, without
+repeating context.
+•Upload a screenshot of an error and ask Now Assist what it means and how to resolve it,
+without describing the image manually in text.
+•Upload a PDF crash log or SLA document and ask questions about its contents, without
+reading through the full document.
+© 2026 ServiceNow, Inc. All rights reserved. 67
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Workflow** | **Product** |
+|---|---|
+| Technology | Now Assist for IT Service Management (ITSM) |
+| Customer | Now Assist for Customer Service Management (CSM) Now Assist for Field Service Management (FSM) |
+| Employee | Now Assist for HR Service Delivery (HRSD) |
+| Governance,Risk, and Compliance | Now Assist for Third-party Risk Management (TPRM) |
+
+© 2026 ServiceNow, Inc. All rights reserved. 68
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+Supported file types and limits
+You can upload one file per session. The following file types are supported:
+•Images: PNG, JPG (maximum 10 MB)
+•Documents: PDF, DOCX (maximum 10 MB)
+Now Assist agentic workflows
+You can customize Now Assist agentic workflows to meet the needs of your users in different
+workflows. For example, you can use agentic AI to help resolve tasks, execute routine but
+variable procedures, and investigate root causes or analytical trends.
+Agentic workflows overview
+Agentic workflows use multiple AI agents to achieve specific outcomes. Different workflows
+offer different available tasks. Many agentic workflow templates are available for you to activate,
+duplicate, or customize. For more information, see Activate an agentic workflow template and
+Duplicate an agentic workflow.
+For more information about the in-product agentic AI experience, see In-product agentic AI. You
+can create UI actions for your agentic workflows in AI Agent Studio. Open the agentic workflow,
+navigate to the Select channels and access step in the guided setup, and create a UI action.
+Workflow and product agentic workflows
+The following table describes the available AI agents agentic workflows that are included in Now
+Assist applications.
+Available agentic workflows by product
+Product Available agentic workflows
+Now Assist for Configuration Management
+•Create configuration item
+Database (CMDB)
+•Provide advice on CMDB governance
+•Search CMDB
+Now Assist in Contract Management
+•Conversational contract search and
+insights
+•Manage contract repository
+Now Assist for Creator Create a theme using Now Assist
+Now Assist for Customer Service
+•Accelerate complaint case handling
+Management (CSM)
+•AI voice agent in CSM
+•Provide Customer 360 insights
+•Triage cases
+Now Assist for Enterprise Architecture (EA) Generate enterprise architecture diagram
+© 2026 ServiceNow, Inc. All rights reserved. 69
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Available agentic workflows** |
+|---|---|
+| Now Assist for Configuration Management Database (CMDB) | •Create configuration item •Provide advice on CMDB governance •Search CMDB |
+| Now Assist in Contract Management | •Conversational contract search and insights •Manage contract repository |
+| Now Assist for Creator | Create a theme using Now Assist |
+| Now Assist for Customer Service Management (CSM) | •Accelerate complaint case handling •AI voice agent in CSM •Provide Customer 360 insights •Triage cases |
+| Now Assist for Enterprise Architecture (EA) | Generate enterprise architecture diagram |
+
+Available agentic workflows by product (continued)
+Product Available agentic workflows
+Now Assist for Operational Sustainability Generate carbon calculations for metrics
+Management
+Now Assist for Field Service Management Create a work order
+(FSM)
+Now Assist for Finance and Supply Chain
+Conversational intake for sourcing and
+(FSC)
+procurement
+Now Assist for Financial Services Operations Help resolve friendly fraud disputes
+(FSO)
+Now Assist for Hardware Asset Management
+•Help manage hardware asset requests
+(HAM)
+•Help repair hardware assets
+Now Assist for Health and Safety
+•Create actions for safety incidents
+•Help resolve health and safety cases agentic
+workflow
+•Health safety incident patterns assistant
+agentic workflow
+Now Assist for HR Service Delivery (HRSD)
+•Help resolve tuition requests
+•Help resolve tuition reimbursement
+requests
+•Predict service and transfer HR cases
+•Resolve noncritical HR cases
+•Resolve critical HR cases
+•Generate onboarding ramp-up plan
+•Recommend catalog and order guide tasks in
+Onboarding Journey
+•Offboarding knowledge transfer plan
+generation
+•Schedule interviews
+Now Assist for Integrated Risk Management
+•Generate regulatory action plans
+(IRM)
+•Get regulatory analysis
+•Identify risks for an entity
+•Optimize issue resolution
+© 2026 ServiceNow, Inc. All rights reserved. 70
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Available agentic workflows** |
+|---|---|
+| Now Assist for Operational Sustainability Management | Generate carbon calculations for metrics |
+| Now Assist for Field Service Management (FSM) | Create a work order |
+| Now Assist for Finance and Supply Chain (FSC) | Conversational intake for sourcing and procurement |
+| Now Assist for Financial Services Operations (FSO) | Help resolve friendly fraud disputes |
+| Now Assist for Hardware Asset Management (HAM) | •Help manage hardware asset requests •Help repair hardware assets |
+| Now Assist for Health and Safety | •Create actions for safety incidents •Help resolve health and safety cases agentic workflow •Health safety incident patterns assistant agentic workflow |
+| Now Assist for HR Service Delivery (HRSD) | •Help resolve tuition requests •Help resolve tuition reimbursement requests •Predict service and transfer HR cases •Resolve noncritical HR cases •Resolve critical HR cases •Generate onboarding ramp-up plan •Recommend catalog and order guide tasks in Onboarding Journey •Offboarding knowledge transfer plan generation •Schedule interviews |
+| Now Assist for Integrated Risk Management (IRM) | •Generate regulatory action plans •Get regulatory analysis •Identify risks for an entity •Optimize issue resolution |
+
+Available agentic workflows by product (continued)
+Product Available agentic workflows
+Now Assist for IT Operations Management
+•Analyze alert impact
+(ITOM)
+•Agent Client Collector (ACC) diagnostic
+workflow
+•Analyze potential impact
+•Manage alerts autonomously
+•Triage and analyze alerts
+Now Assist for IT Service Management
+•Assess conflicts for a change request
+(ITSM)
+•Assess quality of a change request
+•Create outages for a change request
+•Create standard change request
+•Create standard change template proposal
+•DEX issue diagnosis and resolution
+•Explain SLA
+•Generate change request plans
+•Generate post incident reviews
+•Incident assist
+•Investigate and resolve ITSM incidents
+•Manage Microsoft 365 group members
+•Notify users with Twilio
+•Schedule a change
+•Suggest configuration items for a change
+request
+•Triage and categorize ITSM incidents
+•Wrap-up and resolve ITSM incidents
+Now Assist for Legal Service Delivery (LSD)
+•Conversational contract search and
+insights
+•Triage legal requests
+Now Assist for Manufacturing Commercial Execute recall campaigns faster
+Operations (MCO)
+Now Assist for Operational Technology Import the OT device spreadsheet into OT
+Manager (OTM) CMDB
+Now Assist for Operational Technology Generate OT KB articles agentic workflow
+Service Management (OTSM)
+© 2026 ServiceNow, Inc. All rights reserved. 71
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Available agentic workflows** |
+|---|---|
+| Now Assist for IT Operations Management (ITOM) | •Analyze alert impact •Agent Client Collector (ACC) diagnostic workflow •Analyze potential impact •Manage alerts autonomously •Triage and analyze alerts |
+| Now Assist for IT Service Management (ITSM) | •Assess conflicts for a change request •Assess quality of a change request •Create outages for a change request •Create standard change request •Create standard change template proposal •DEX issue diagnosis and resolution •Explain SLA •Generate change request plans •Generate post incident reviews •Incident assist •Investigate and resolve ITSM incidents •Manage Microsoft 365 group members •Notify users with Twilio •Schedule a change •Suggest configuration items for a change request •Triage and categorize ITSM incidents •Wrap-up and resolve ITSM incidents |
+| Now Assist for Legal Service Delivery (LSD) | •Conversational contract search and insights •Triage legal requests |
+| Now Assist for Manufacturing Commercial Operations (MCO) | Execute recall campaigns faster |
+| Now Assist for Operational Technology Manager (OTM) | Import the OT device spreadsheet into OT CMDB |
+| Now Assist for Operational Technology Service Management (OTSM) | Generate OT KB articles agentic workflow |
+
+Available agentic workflows by product (continued)
+Product Available agentic workflows
+Now Assist for MID Server MID Server Guardian
+Now Assist in Notifications Email Intent to Action
+Now Assist for Public Sector Digital Services Help manage public information requests
+(PSDS)
+Purchase Order Management
+•Define PO exception mitigation strategy
+•Email Intent to Action
+Now Assist for Sales Force Automation Help nurture new leads
+(SFA)
+Now Assist for Security Incident Response
+•Analyze security operations metrics
+•Close security incident
+•Generate SIR shift handover report
+•Resolve security incident
+Now Assist for Software Asset Management
+•Create software reclamation rule
+(SAM)
+•Evaluate software removal candidate
+•Help manage software asset requests
+Now Assist for Strategic Portfolio
+•Generate Agile stories
+Management (SPM)
+•Monitor project tasks
+Now Assist for Supplier Lifecycle Operations Email intent to action
+(SLO)
+Now Assist for Telecommunications, Media
+•Test and repair telecom service issues
+and Technology (TMT)
+•Help remediate bill issues
+•Analyze network incident
+•Customer voice quality issue resolutions
+•Monitor engagement health
+•Recommend risk signal solutions agentic
+workflow
+•Trigger risk mitigation touchpoint
+•Support renewals and expansions
+•Service Exchange onboarding
+© 2026 ServiceNow, Inc. All rights reserved. 72
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Available agentic workflows** |
+|---|---|
+| Now Assist for MID Server | MID Server Guardian |
+| Now Assist in Notifications | Email Intent to Action |
+| Now Assist for Public Sector Digital Services (PSDS) | Help manage public information requests |
+| Purchase Order Management | •Define PO exception mitigation strategy •Email Intent to Action |
+| Now Assist for Sales Force Automation (SFA) | Help nurture new leads |
+| Now Assist for Security Incident Response | •Analyze security operations metrics •Close security incident •Generate SIR shift handover report •Resolve security incident |
+| Now Assist for Software Asset Management (SAM) | •Create software reclamation rule •Evaluate software removal candidate •Help manage software asset requests |
+| Now Assist for Strategic Portfolio Management (SPM) | •Generate Agile stories •Monitor project tasks |
+| Now Assist for Supplier Lifecycle Operations (SLO) | Email intent to action |
+| Now Assist for Telecommunications, Media and Technology (TMT) | •Test and repair telecom service issues •Help remediate bill issues •Analyze network incident •Customer voice quality issue resolutions •Monitor engagement health •Recommend risk signal solutions agentic workflow •Trigger risk mitigation touchpoint •Support renewals and expansions •Service Exchange onboarding |
+
+Available agentic workflows by product (continued)
+Product Available agentic workflows
+Now Assist for Vulnerability Response
+•Retrieve Vulnerability and exposure data with
+generative AI
+•Assess your exposure to vulnerabilities
+•Analyze vulnerability remediation status
+•Security Exposure 360
+Now Assist for Workplace Service Delivery
+•Automate map updates
+(WSD)
+•Help manage workplace reservations
+•Manage temporary space closures
+•Optimize cleaning activities
+•Workplace Advisor QnA
+Now Assist for Zero Copy Connector Explore ERP models
+Now Assist Platform
+•Analyze incident trends
+•Classify tasks
+•Generate my work plan
+•Generate resolution plans
+•Help optimize team productivity
+•Identify ways to improve services
+•Investigate IT problems
+•Notification agent
+•Process images for tasks
+•Suggest survey responses
+In-product experience for agentic workflows
+Dedicated spaces in workspaces and in the Core UI enable you to use agentic workflows directly
+in record forms. You can view agentic workflow progress and previous executions, and you can
+answer follow-up questions for ones that require human supervision.
+Agentic AI in the Core UI and workspaces
+Agentic workflows can help accomplish complex tasks for you, such as generating resolution
+notes for cases and incidents or investigating problems and root causes. You can view agentic
+workflows running on a record in the AI Workflows panel in the Core UI form or in workspaces.
+For agentic workflows that require human supervision, you can answer questions, approve next
+steps, or provide other input. Along with current progress, you can also review historical runs to
+compare results.
+© 2026 ServiceNow, Inc. All rights reserved. 73
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Product** | **Available agentic workflows** |
+|---|---|
+| Now Assist for Vulnerability Response | •Retrieve Vulnerability and exposure data with generative AI •Assess your exposure to vulnerabilities •Analyze vulnerability remediation status •Security Exposure 360 |
+| Now Assist for Workplace Service Delivery (WSD) | •Automate map updates •Help manage workplace reservations •Manage temporary space closures •Optimize cleaning activities •Workplace Advisor QnA |
+| Now Assist for Zero Copy Connector | Explore ERP models |
+| Now Assist Platform | •Analyze incident trends •Classify tasks •Generate my work plan •Generate resolution plans •Help optimize team productivity •Identify ways to improve services •Investigate IT problems •Notification agent •Process images for tasks •Suggest survey responses |
+
+You can create UI actions for your agentic workflows in AI Agent Studio. Open the agentic
+workflow, navigate to the Select channels and access step in the guided setup, and create a UI
+action.
+If you don't see this panel, ensure that the property
+com.glide.agentic_processes_view.enabled is set to true.
+Agentic workflow execution list
+The list of agentic workflow cards can be filtered by execution state. You can change which states
+to filter by at any time.
+Note: The difference between the Ready for review state and the Completed
+state is that the former has generated some output. Agentic workflows without an output are
+marked only as Completed.
+The user responsible for answering follow-up questions is identified by the Supervised by
+field. Only the user specified can answer questions to progress the agentic workflow, but others
+can see the questions asked.
+Each card displays the current or final processing message. You can see the full list of
+processing messages by selecting the agentic workflow card to open the details.
+Time estimates based on previous executions are provided for currently running workflows. For
+completed workflows, the cards show the total time taken.
+The execution list also displays the results of any workflows triggered in the Now Assist panel or
+triggered automatically by events once they are complete.
+© 2026 ServiceNow, Inc. All rights reserved. 74
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Agentic workflow in Core UI — AI Activity panel]**
+> Incident record INC0010015 ("Need replacement of laptop battery"): Priority 4-Low, Opened 2026-03-04, State: In Progress, Impact: 3-Low, Urgency: 3-Low. Right-side **AI Activity** panel shows two completed workflow cards:
+> 1. **Generate Resolution Plan** — Ready for review, Beth Anglin (Owner), Completed at 9:47 AM
+> 2. **Classify Tasks** — Ready for review, Beth Anglin (Owner), Completed on Mar 5, 2026
+> Top toolbar: Save, Classify Task, Generate Resolution Plan, Create change request buttons.
+
+> **[Screenshot: AI Activity panel — Execution state filter dropdown]**
+> Filter options shown: Input required ✓, In progress ✓, Ready for review ✓, Completed, (Failed), Cancelled.
+
+
+Agentic workflow execution details
+When you select a specific agentic workflow, you can view the processing messages and history.
+Processing messages show you what steps the agentic workflow has taken already and which
+ones are still being completed.
+You can change the processing messages for an AI agent or tool in AI Agent Studio. For an AI
+agent, open the AI agent and go to the Select channels and access step. For a tool, open the AI
+agent, go to the Add tools and information step, and select the tool to open the form modal.
+The history space on the card can show previous answers to follow-up questions. For completed
+agentic workflows, you can review the final output in the history if there is any. If there’s an output,
+you can see the sources for the AI's reasoning by selecting the information icon. Citations can
+include Knowledge Base articles and lists of records.
+You can copy the text of the final output of an agentic workflow by selecting the copy icon.
+© 2026 ServiceNow, Inc. All rights reserved. 75
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Agentic workflow execution detail — Generate Resolution Plan]**
+> Detail view showing:
+> - Status: **Ready for review** (green badge)
+> - Owner: Beth Anglin, Completed Mar 5, 2026
+> - Step list (each ✓ checked): Created a plan → Started AI Agent "Next action r..." → Used tool "Get record detai..." → Optimized results → Checked on remaining steps → Searching in Similar records → Used tool "WebSearch" → Used tool "Get Related List..." → Used tool "Get similar recor..." → Used tool "Get relevant kn..." → Checked on remaining steps (×2) → Used tool "Save activity not..." → Checked on remaining steps → Used tool "Check Plan Acti..." → Checking on remaining steps.
+
+
+Fields updated with agentic AI
+If an agentic workflow changes the value of a field, Now Assist displays a label under the field
+value stating that the value was modified by AI.
+AI presence indicator
+When an agentic workflow is in progress on the record, an icon is displayed at the top of the
+record form along with other UI actions. If selected, you can see how many agentic workflows are
+running on the record and the general status of each one.
+If there’s an agentic workflow in progress that you don't want to complete, you can cancel it.
+Select the more options icon on the agentic workflow card, and then select Cancel.
+Alerts for agentic workflow status changes and required input
+When an agentic workflow changes states, such as when it completes or has a follow-up
+question, an alert appears at the top of the screen. If the workflow generates an output, you can
+select the Review button to see the final result.
+Enable the in-product experience for agentic workflows
+Enable the AI Workflows panel and UI actions for agentic workflows on forms in the Core UI and
+workspaces to track agentic AI executions.
+Before you begin
+Role required: admin
+© 2026 ServiceNow, Inc. All rights reserved. 76
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+
+> **[Screenshot: Agentic workflow — Review output panel]**
+> Completed "Review output" panel for a laptop battery replacement incident.
+> **Completed resolution steps:** No completed steps — no prior actions recorded.
+> **Pending resolution steps:**
+> - Verify 5-year Dell factory warranty coverage for parts and labor
+> - Contact OIT Help Desk at 8-HELP to confirm hardware issue
+> - If hardware confirmed, contact Dell directly; have system tag number ready
+> - Dell ships replacement battery with prepaid return label
+> - Hardware Support can replace under warranty for a labor charge
+> - Laptop batteries are CRUs; Dell does not reimburse Hardware Support labor
+> - Reference: Dell Warranty and Battery Replacement policy (URL provided)
+> Thumbs up/down feedback icons. Disclaimer: "Generated by Now Assist. Check for accuracy."
+
+
+About this task
+Agentic workflows can perform work on certain records, and you can track their progress or
+provide input in the AI Workflows panel available for forms and workspaces. See In-product
+agentic AI for more details about the functions and features of the AI Workflows panel.
+The following task describes the process for enabling the system property that
+allows you to see the AI Workflows panel and see UI actions for agentic workflows:
+com.glide.agentic_processes_view.enabled.
+To enable users to access agentic workflows with UI actions, you can open the agentic workflow
+in AI Agent Studio and navigate to the Select channels and access step. You can select a UI
+action as a possible way to access the workflow. See Select channels and access for agentic
+workflows for more information.
+Procedure
+1.Navigate to All > System Properties > All Properties.
+2. Select New.
+3. In the Name field, enter com.glide.agentic_processes_view.enabled.
+4.In the Value field, enter true.
+Result
+The In-product agentic experience, including the AI Workflows panel, is available.
+What to do next
+Monitor agentic workflow execution on forms in the Core UI and workspaces, or create UI actions
+to grant users access.
+Platform agentic workflows
+You can use the available Now Assist AI agents Platform agentic workflows to achieve business
+outcomes with self-executing autonomous AI agents.
+Use the following agentic workflows that are available with ServiceNow AI Platform.
+Available agentic workflows for Platform
+Agentic
+workflow Description Available AI agents
+name
+Analyze Detects recurring patterns, predicts disruptions, and enables Issue trend
+task trends proactive resolutions with actionable recommendations. analysis AI Agent
+Classify Triages tasks by updating fields, evaluating sentiment, and Record field value
+tasks summarizing. prediction AI agent
+Generate Provides a personalized work plan based on current work Prioritize work AI
+my work and historical data of previous work. agent
+plan
+© 2026 ServiceNow, Inc. All rights reserved. 77
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Agentic workflow name** | **Description** | **Available AI agents** |
+|---|---|---|
+| Analyze task trends | Detects recurring patterns, predicts disruptions, and enables proactive resolutions with actionable recommendations. |  |
+| Classify tasks | Triages tasks by updating fields, evaluating sentiment, and summarizing. |  |
+
+Available agentic workflows for Platform
+(continued)
+Agentic
+workflow Description Available AI agents
+name
+•Next best action
+Generate Analyzes tasks, generates resolution summaries, and
+recommendation
+resolution updates comments or work notes.
+AI agent
+plan
+•Resolution
+Action AI Agent
+Help Identifies backlog items, evaluates team member Work Allocator AI
+optimize performance on previous assignments, and allocates work Agent
+team based on similarity to those previous assignments.
+productivity
+Identify Analyzes feedback, trends, and metrics and provides Survey Analysis AI
+ways to recommendations to help optimize processes. agent
+improve
+service
+Investigate Provides insights from incident or problem details. Problem
+problems investigation AI
+agent
+•Image Processor
+Process Processes images and converts them to tasks.
+Agent
+images for
+tasks •Document and
+visual insights AI
+agent
+•Survey response
+Propose Suggests answers for survey questions.
+suggestion AI
+survey
+agent
+responses
+•Survey filling
+data collection
+AI agent
+© 2026 ServiceNow, Inc. All rights reserved. 78
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Agentic workflow name** | **Description** | **Available AI agents** |
+|---|---|---|
+| Generate resolution plan | Analyzes tasks, generates resolution summaries, and updates comments or work notes. |  |
+| Help optimize team productivity | Identifies backlog items, evaluates team member performance on previous assignments, and allocates work based on similarity to those previous assignments. |  |
+| Identify ways to improve service | Analyzes feedback, trends, and metrics and provides recommendations to help optimize processes. |  |
+| Investigate problems | Provides insights from incident or problem details. |  |
+| Process images for tasks | Processes images and converts them to tasks. |  |
+
+Important: By default, all agentic workflows and AI agent records are read only.
+To run the AI agents autonomously, you must either activate the agentic workflow template
+or duplicate the agentic workflow, and then proceed with the following steps:
+•Activate the agentic workflow.
+•Activate all agents within the agentic workflow.
+•Activate the trigger to invoke the agentic workflow automatically. If you prefer to invoke it
+manually, activating the trigger isn’t necessary.
+Tools mapped to AI agents in agentic workflows
+To find the tools mapped to AI agents used in the agentic workflows, you can perform the
+following steps:
+1.Navigate to All > AI Agent Studio > Create and manage
+2. In the Agentic workflows tab, select the agentic workflow.
+3. In the Describe and connect step of the guided setup, select the AI agent you want to see the
+tools for.
+4.Go to the Add tools and information step.
+5. Review the tools mapped to the AI agent.
+6.Repeat for all AI agents in the agentic workflow.
+Agentic workflows and UI actions
+To enable users to access agentic workflows with UI actions, you can open the agentic workflow
+in AI Agent Studio and navigate to the Select channels and access step. You can select a UI
+action as a possible way to access the workflow
+If you don't see your UI actions after configuring it in AI Agent Studio, ensure that the property
+com.glide.agentic_processes_view.enabled is set to true.
+Looking for an AI agent?
+•There might be AI agents installed with the Now Assist application that are not used in agentic
+workflows. To learn how to see all agents that are available on your instance, see Find AI
+agents.
+•To find agents that might not be installed on your instance, visit the AI Agent Marketplace on
+the ServiceNow Store.
+Platform Analyze task trends agentic workflow
+Use the Platform Analyze task trends agentic workflow to detect recurring task patterns of closed
+tickets so that you can understand the root cause and get recommendations to prevent them
+from happening in future.
+Analyze task trends overview
+The Analyze task trends agentic workflow enhances task management by detecting recurring
+patterns, predicting disruptions, and suggesting proactive resolution to reduce downtime and
+improve reliability. Tasks are grouped and analyzed by AI to analyze common recurring issues
+and root causes. The LLM then generates resolution recommendations based on the analysis
+and displays it to you. After the analysis is generated, you can continue the conversation to do
+the following:
+© 2026 ServiceNow, Inc. All rights reserved. 79
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+•Get a summary of each group analysis. You have to specify which group you would like to get a
+summary of.
+•Download the analysis as a PDF or Word document.
+•Get more information by asking follow-up questions. For example, you can ask why certain
+suggestions were generated.
+•Analyze the next ten groups. Each analysis is done for ten groups at a time. You can continue
+analyzing more groups with the same filters within the same conversation, but the other
+actions for the previous group are no longer available.
+The exact options for follow-up actions available can be configured.
+The default input fields considered for analysis are the following:
+•Short Description
+•Description
+•Resolution Notes
+•Resolution Code
+•Subcategory
+•Category
+You can con figure additional input fields using a Now Assist Skill Config Var Set
+[sn_nowassist_skill_config_var_set]. See the Additional configuration section for more
+information.
+The agents, tools, and triggers associated with the Analyze task trends agentic workflow are
+provided by Now Assist applications. You can activate the agentic workflow template by making
+triggers active and setting the display settings to include the Now Assist panel. If you want to
+change this agentic workflow's instructions, you must duplicate it, adjust the settings to suit your
+specific needs, and activate the duplicated version instead.
+Prerequisites and setup
+To access this workflow, you must have Now Assist for Platform installed on your instance. You
+can get this by installing any other Now Assist application, such as Now Assist for IT Service
+Management (ITSM).
+For this agentic workflow to behave as expected, you should have at least 500 records on your
+task table.
+You must also configure Group Action Framework (GAF). See Group Action Framework for more
+information on what GAF is and how to set it up. The Incident, Case and HR Case tables use the
+default GAF records, but you can configure GAF for other task tables.
+GAF is set up for certain Now Assist applications for you. If you want the agentic workflow to have
+its own system of categorization different from the main application, you can clone an existing
+action strategy skill and use the clone in the var set described below. This enables you to train
+the groupings differently for different agentic resources.
+Note: If you create a clone of an action strategy skill, ensure that Optimized
+prediction is enabled to use AI Search as your fallback. You can leave it unchecked if
+you do not use AI Search on your instance.
+© 2026 ServiceNow, Inc. All rights reserved. 80
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+Role masking
+Required role: sn_uxc_gen_ai.platform_ai_analyze_trnds.
+Role masking enables users to limit the roles and privileges of agentic workflows during tool
+execution. Agentic workflows and their AI agents that get installed with Now Assist applications
+are assigned pre-defined roles. If you select Users with specific roles for user
+access, you must configure the security controls to include these roles. Data access settings
+must also include these roles. For the instructions to change the security controls, see Define
+security controls for an agentic workflow.
+In the data access settings, you must also add the necessary roles to enable reading of the
+tables for the records you want to access for trend analysis. For example, you can add the itil role
+to the agentic workflow's list of approved roles so that it can access Incident records.
+Additional configuration
+You can change different settings related to the agentic workflow by changing values for the Now
+Assist Skill Config Var Set. To access the variable set and make changes, do the following while
+in the Platform AI Agents and Skills scope:
+•Go to the Now Assist Skill Config [sn_nowassist_skill_config] table.
+•Open the record named Analyze Task Trends.
+•In the Now Assist Skill Config Var Set related list, select Task Trends Input Config.
+•Edit the variable values.
+•Save or update the record.
+Time is a required filter specification in the user utterance. If you want users to be able to filter
+tasks by fields other than time, you can configure a Task Table Config var set. One for the
+Task table is provided as part of the application. If you want to create one for a specific table,
+you can create a Now Assist Skill Config Var Set [sn_nowassist_skill_config_var_set]. The Skill
+Config is Analyze Task Trends, and the Config Type is Prompt Parameter
+Configuration.
+Task Trends Input Config configuration
+Config
+Description Default value
+field
+•Get a
+Post List of possible follow-up actions a user can take before the agentic
+summary
+Analysis workflow completes.
+Actions •Get more
+info
+•Analyze
+next 10
+groups
+•Download
+analysis
+© 2026 ServiceNow, Inc. All rights reserved. 81
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** | **Default value** |
+|---|---|---|
+
+Task Trends Input Config configuration (continued)
+Config
+Description Default value
+field
+Analysis Range of time, in months, for the trends analyzer to look at records 3
+Time to identify trends. You can specify smaller ranges when running the
+Frame agentic workflow, but this value defines the maximum limit.
+GAF Number of records analyzed per GAF record grouping. See the previous 8
+Record Prerequisites and setup section.
+Limit
+Prompt parameter configuration
+Config field Description Default value
+Input Table that these potential filter conditions Task
+Table belong to
+Input Additional fields that the agentic None
+Fields workflow can consider as context for its
+analysis
+•Assignment group.Name
+Filter Fields that users can include when
+Fields invoking the agentic workflow •Service.Name
+If you want to add new fields, use the •Configuration item.Name
+dot-walked display-label format like the
+default values.
+Group The Group Action Framework grouping No default
+Skill ID skill dedicated to arranging records into
+categories
+Action The Group Action Framework action skill No default
+Skill ID dedicated to selecting and mapping
+representative records for each group
+and summarizing them
+See Group Action Framework for
+information about setting up GAF.
+Auto When the grouping and action skills run No default
+Classify again to incorporate new records for
+Frequency analysis
+© 2026 ServiceNow, Inc. All rights reserved. 82
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** | **Default value** |
+|---|---|---|
+| Analysis Time Frame | Range of time, in months, for the trends analyzer to look at records to identify trends. You can specify smaller ranges when running the agentic workflow, but this value defines the maximum limit. |  |
+
+| **Config field** | **Description** | **Default value** |
+|---|---|---|
+| Input Table | Table that these potential filter conditions belong to |  |
+| Input Fields | Additional fields that the agentic workflow can consider as context for its analysis |  |
+| Filter Fields | Fields that users can include when invoking the agentic workflow If you want to add new fields, use the dot-walked display-label format like the default values. |  |
+| Group Skill ID | The Group Action Framework grouping skill dedicated to arranging records into categories |  |
+| Action Skill ID | The Group Action Framework action skill dedicated to selecting and mapping representative records for each group and summarizing them See Group Action Framework for information about setting up GAF. |  |
+
+Prompt parameter configuration (continued)
+Config field Description Default value
+Note: If you provide a Group
+Skill ID and an Action Skill ID but
+leave the Auto Classify Frequency
+empty, it will default to 24 hours.
+Accessing the Analyze task trends agentic workflow
+To access the agentic workflow:
+1.Navigate to All > AI Agent Studio > Create and manage.
+2. Select Analyze task trends.
+The first step of the guided setup includes a complete list of included AI agents. Selecting the
+name of an AI agent opens it in a new browser tab, where you can see the full description, role,
+list of steps, and tools. Tools are displayed in the second step of the AI agent guided setup, Add
+tools and information.
+In-product agentic AI and UI actions
+Agentic workflows can be accessed in the Core UI and in workspaces in the AI Activity panel.
+From there, you can track their progress, provide or review input, and see the results of the work
+performed. For more information, see In-product agentic AI for more details about the AI Activity
+panel.
+To enable users to access agentic workflows with UI actions, you can open the agentic workflow
+in AI Agent Studio and navigate to the Select channels and access step. You can select a UI
+action as a possible way to access the workflow
+If you don't see your UI actions after configuring it in AI Agent Studio, ensure that the property
+com.glide.agentic_processes_view.enabled is set to true. See Enable the in-
+product experience for agentic workflows.
+Testing the Analyze task trends agentic workflow
+You can manually test an agentic workflow execution or access on the Testing page of AI Agent
+Studio if you have the sn.aia_admin role and all other roles configured in the security controls.
+Start a manual test, select a test type and the name of the workflow, and use utterances in the
+Task field like the following samples. See Test an agentic workflow execution.
+If you want to evaluate the agentic workflow over many different execution logs, run an
+automated evaluation.
+Sample utterance
+After the workflow has been activated in AI Agent Studio, use similar queries to the following
+to run the agentic workflow in the Now Assist panel. You can also run this workflow on
+the Testing page of AI Agent Studio with the same utterance in the Task field if you have the
+sn.aia_admin role.
+Each utterance must include the name of the table and the time frame to analyze. If the utterance
+doesn't include these things, the agentic workflow prompts you for more information.
+© 2026 ServiceNow, Inc. All rights reserved. 83
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** | **Default value** | **** |
+|---|---|---|---|
+|  |  |  | Note: If you provide a Group Skill ID and an Action Skill ID but leave the Auto Classify Frequency empty, it will default to 24 hours. |
+
+The time frame specified by the user can't exceed the maximum value set by the Analysis time
+frame configuration.
+When invoking the agentic workflow, if you want to use additional filters, such as assignment
+group, use the name of the field in the utterance. For example, "Analyze incident trends assigned
+to the Hardware group" is more likely to analyze the correct records than "Analyze Hardware
+incident trends."
+•Analyze incident trends related to payment issues within the last two months
+•Analyze case trends within the last month
+•Analyze HR case trends with High Priority within the last two years
+•Analyze incident and problem trends within the last two weeks
+Troubleshooting
+When running this agentic workflow, it's possible to see an error that states "I couldn't analyze as
+I didn't have the required resources." This error occurs when GAF isn't configured for the table
+you want to analyze. See Configure Group Action Framework for steps to configure GAF for the
+table. If you're still having issues after GAF is configured, reach out to Now Support.
+AI agents used in the Analyze task trends agentic workflow
+The following table lists the agents that are used in the Analyze task trends agentic workflow.
+Important: In the Select channels and status step of each AI agent's guided setup, make
+sure that the Status toggle is enabled to activate the AI agent.
+AI agents names and descriptions in the Analyze task trends agentic workflow
+AI agent
+AI agent description Role required
+name
+Issue Analyzes grouped task data to sn_uxc_gen_ai.platform_ai_analyze_trnds
+trend identify recurring issues and root
+analysis causes. Provides detailed, actionable
+AI recommendations using structured
+agent analysis.
+Other Platform agentic workflows
+For more information on other agentic workflows that are associated with the Platform workflow,
+see Platform agentic workflows.
+Platform Classify tasks agentic workflow
+Use the Platform Classify tasks AI agents agentic workflow to gather relevant information about
+tasks automatically and make decisions about priorities and assignments.
+Classify tasks overview
+The Classify tasks agentic workflow can help improve efficiency and accuracy by automatically
+gathering information, prioritizing tasks, assigning teams, detecting sentiment, and generating
+task summaries.
+The agents, tools, and triggers that are associated with the Classify tasks agentic workflow are
+provided by Now Assist applications. You can activate the agentic workflow template by making
+© 2026 ServiceNow, Inc. All rights reserved. 84
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **AI agent name** | **AI agent description** | **Role required** |
+|---|---|---|
+| Issue trend analysis AI agent | Analyzes grouped task data to identify recurring issues and root causes. Provides detailed, actionable recommendations using structured analysis. | sn_uxc_gen_ai.platform_ai_analyze_trnds |
+
+triggers active and setting the display settings to include the Now Assist panel. If you want to
+change this agentic workflow's instructions, you must duplicate it, adjust the settings to suit your
+specific needs, and activate the duplicated version of the agentic workflow instead.
+Prerequisites and setup
+To access this workflow, you must have Now Assist for Platform installed on your instance, which
+you can get if you install any other Now Assist application, such as Now Assist for IT Service
+Management (ITSM).
+For this agentic workflow to behave as expected, you must also configure Group Action
+Framework (GAF). See Set up AI Search for Group Action Framework and Configure Group Action
+Framework for more information on getting started with GAF.
+Role masking
+Required role: sn_uxc_gen_ai.platform_ai_classify_tasks
+Role masking enables users to limit the roles and privileges of agentic workflows during tool
+execution. Agentic workflows and their AI agents that get installed with Now Assist applications
+are assigned pre-defined roles. If you select Users with specific roles for user
+access, you must configure the security controls to include these roles. Data access settings
+must also include these roles. For the instructions to change the security controls, see Define
+security controls for an agentic workflow.
+In the data access settings, you must also add the necessary roles to enable reading of the
+tables for the records you want to classify. For example, you can add the itil role to the agentic
+workflow's list of approved roles so that it can access Incident records.
+Additional configuration
+You can change different settings related to the agentic workflow by changing values for the Now
+Assist Skill Config Var Set. To access the variable set and make changes, do the following while
+in the Platform AI Agents and Skills scope:
+•Go to the Now Assist Skill Config [sn_nowassist_skill_config] table.
+•Open the record named Task Classify Tasks Skill Config.
+•In the Now Assist Skill Config Var Set related list, select Field Predictor.
+•Edit the variable values.
+•Save or update the record.
+The Classify tasks configuration variable set includes the following variables. You can configure
+either the AIS fields or the GAF field for determining how the agentic workflow gathers what work
+the user has. If you configure both, GAF takes priority when running the agentic workflow. For
+more information about GAF, see Group Action Framework.
+Classify tasks configuration
+Config field Description
+Search Options include Keyword, Semantic, or Hybrid. Keyword-based searches look
+Mode at individual phrases, while semantic-based searches rely on the phrasing of
+utterances as well. Hybrid utilizes both strategies.
+© 2026 ServiceNow, Inc. All rights reserved. 85
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+
+Classify tasks configuration (continued)
+Config field Description
+Default: Keyword
+AIS Fields used by AI Search operations to find similar records for improved prediction
+Search context
+Fields
+Capability OneExtend capability for enhanced field prediction functionality. See Generative AI
+Controller reference for more details.
+GAF Skill configuration for Group AI Framework (GAF).
+Config
+AIS Fields used by AI Search to determine what work a user has
+Search
+Fields
+AIS Fields returned by AI Search to the agentic workflow to base decisions on
+Return
+Fields
+GAF Group Action Framework grouping configuration record, which is a collection of
+Config groups of records to make searching easier
+AIS Profile for AI search, such as Now Assist in Virtual Agent.
+Search
+Profile
+Capability Server-side script to generate custom payloads for OneExtend capability
+Payload integration
+AIS Table used if GAF is not configured
+Fallback
+Table
+Return Field values returned from identified relevant records
+Fields
+Check Uses the information provided by the Issue Readiness AI agent
+for Issue
+Readiness Warning: Only enable if the Issue Readiness AI agent is active on your
+instance. Otherwise, the agentic workflow will not execute.
+© 2026 ServiceNow, Inc. All rights reserved. 86
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+|  |  |
+| AIS Search Fields |  |
+| Capability |  |
+| GAF Config |  |
+| AIS Search Fields |  |
+| AIS Return Fields |  |
+| GAF Config |  |
+| AIS Search Profile |  |
+| Capability Payload |  |
+| AIS Fallback Table |  |
+| Return Fields |  |
+
+Classify tasks configuration (continued)
+Config field Description
+Fields Field values to predict and update
+Table Table where you want to execute the agentic workflow on
+Search Options include Record-based and Utterance-based. Record-based derives search
+Term terms for generating context from the record itself. Utterance-based relies on the
+Source user-submitted utterance for search term options.
+Default: Record-based
+Accessing the Classify tasks agentic workflow
+To access the agentic workflow:
+1.Navigate to All > AI Agent Studio > Create and manage.
+2. Select Classify tasks.
+The first step of the guided setup includes a complete list of included AI agents. Selecting the
+name of an AI agent opens it in a new browser tab, where you can see the full description, role,
+list of steps, and tools. Tools are displayed in the second step of the AI agent guided setup, Add
+tools and information.
+In-product agentic AI and UI actions
+Agentic workflows can be accessed in the Core UI and in workspaces in the AI Activity panel.
+From there, you can track their progress, provide or review input, and see the results of the work
+performed. For more information, see In-product agentic AI for more details about the AI Activity
+panel.
+To enable users to access agentic workflows with UI actions, you can open the agentic workflow
+in AI Agent Studio and navigate to the Select channels and access step. You can select a UI
+action as a possible way to access the workflow
+If you don't see your UI actions after configuring it in AI Agent Studio, ensure that the property
+com.glide.agentic_processes_view.enabled is set to true. See Enable the in-
+product experience for agentic workflows.
+Testing the Classify tasks agentic workflow
+You can manually test an agentic workflow execution or access on the Testing page of AI Agent
+Studio if you have the sn.aia_admin role and all other roles configured in the security controls.
+Start a manual test, select a test type and the name of the workflow, and use utterances in the
+Task field like the following samples. See Test an agentic workflow execution.
+If you want to evaluate the agentic workflow over many different execution logs, run an
+automated evaluation.
+© 2026 ServiceNow, Inc. All rights reserved. 87
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+| Fields |  |
+| Table |  |
+
+Sample utterance
+After the workflow has been activated in AI Agent Studio, enter these or similar phrases in the
+Now Assist panel to trigger the workflow. You must have the sn.now_assist_panel_user role to run
+the workflow. You can also run this workflow on the Testing page of AI Agent Studio with the same
+utterance in the Task field if you have the sn.aia_admin role.
+•Populate the priority and assignment group for INC0001
+•Populate the empty fields on INC0001
+•Find the priority for INC001
+AI agents used in the Classify tasks agentic workflow
+The following table lists the agents that are used in the Classify tasks agentic workflow.
+Important: In the Define availability step of each AI agent's guided setup, make sure that
+the Status toggle is enabled to activate the AI agent.
+AI agents names and descriptions in the Classify tasks agentic workflow
+AI agent
+AI agent description Role required
+name
+Record Fetches, predicts, creates, and sn_uxc_gen_ai.platform_ai_field_predictor
+field value updates records with the provided
+prediction details. Provides summary and
+AI agent justification for recommendations.
+Other Platform agentic workflows
+For more information on other agentic workflows that are associated with the Platform workflow,
+see Platform agentic workflows.
+Platform Generate my work plan agentic workflow
+Use the Platform Generate my work plan agentic workflow to create personalized work plans for
+currently assigned work.
+Generate my work plan overview
+The Generate my work plan agentic workflow creates personalized work plans based on current
+assigned work. This reduces manual effort and guesswork in work planning. The AI agents
+identify and retrieve all work assigned to the user, predict effort required to complete work, and
+generate an actionable work plan. Effort is estimated based on historical records related to the
+open work items. Generated work plans emphasize the highest priority work by examining the
+following information and can result in faster resolution and fewer missed SLAs.
+•User sentiment
+•Short description
+•Priority
+•Description
+•Due date
+•Escalation
+•State
+© 2026 ServiceNow, Inc. All rights reserved. 88
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **AI agent name** | **AI agent description** | **Role required** |
+|---|---|---|
+| Record field value prediction AI agent | Fetches, predicts, creates, and updates records with the provided details. Provides summary and justification for recommendations. | sn_uxc_gen_ai.platform_ai_field_predictor |
+
+•Updated
+•Number
+•Impact
+•SLA
+Along with the plan itself, the agentic workflow also provides reasoning behind its decisions for
+creating the plan.
+The agents, tools, and triggers associated with the Generate my work plan agentic workflow are
+provided by Now Assist applications. You can activate the agentic workflow template by adding
+triggers and setting the display settings to include the Now Assist panel. To change this agentic
+workflow's instructions, duplicate it, adjust the settings to suit your specific needs, and activate
+the duplicated version instead.
+Prerequisites and setup
+To access this workflow, you must have Now Assist for Platform installed on your instance. You
+can get this by installing any other Now Assist application, such as Now Assist for IT Service
+Management (ITSM).
+Now LLM is not a supported LLM provider for the Generate my work plan agentic workflow.
+Role masking
+Required role: sn_uxc_gen_ai.platform_ai_work_planner.
+Role masking enables users to limit the roles and privileges of agentic workflows during tool
+execution. Agentic workflows and their AI agents that get installed with Now Assist applications
+are assigned pre-defined roles. If you select Users with specific roles for user
+access, you must configure the security controls to include these roles. Data access settings
+must also include these roles. For the instructions to change the security controls, see Define
+security controls for an agentic workflow.
+In the data access settings, add the necessary roles to enable reading of the tables for the
+records you want to access for potential work plans. For example, add the itil role to the agentic
+workflow's list of approved roles so that it can access Incident records.
+Additional configuration
+Change different settings related to the agentic workflow by changing values for the Now Assist
+Skill Config Var Set. To access the variable set and make changes, do the following while in the
+Platform AI Agents and Skills scope:
+•Go to the Now Assist Skill Config [sn_nowassist_skill_config] table.
+•Open the record named Generate my work plan config.
+•In the Now Assist Skill Config Var Set related list, select New.
+•Enter a name for your Config Var Set.
+•Set Config Type to be either User schedule or Generate my work plan.
+•Save the Var Set record.
+•Set the variables for the config type.
+•Save the Var Set.
+The work plan config var set includes general variables for running the agentic workflow.
+© 2026 ServiceNow, Inc. All rights reserved. 89
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+Work plan config type configurations
+Config
+Description
+field
+Schedule Creates a scheduled job that automatically runs, allowing users to see updated
+job prioritization suggestions after making progress in their work. Default: Unselected.
+Schedule How long after a record in the original work plan is updated for the agentic workflow
+job to run again. Default: 30 minutes
+frequency
+Predict Predict estimated time to complete work per record.
+estimates
+Exclude By default, certain fields are used for prioritizing work on the Task table. You can
+task table configure what fields to use on individual tables, such as the Incident table. Enable
+this to only plan for tables configured and not other records which are task or
+extension of task tables.
+Max tasks The maximum number of tasks that can be recommended to a user for their work
+plan. Default: 30 tasks
+The Incident config var set includes the following variables. Configure either the AIS fields or
+the GAF field for determining how the agentic workflow gathers what work the user has. If you
+configure GAF, it takes priority when running the agentic workflow. For more information about
+GAF, see Group Action Framework.
+Use this config var set as a template to change any values for other tables, such as the Case or
+HR Case tables.
+Note: If you select Exclude task table in the work plan config var set, only the
+tables that have these var sets configured are included for work in the suggested work plan.
+Incident table config type configuration
+Config field Description
+Table Table for record types that someone can work on
+Conditions Filter criteria for determining eligible tasks
+Record Fields passed to the workflow for analysis
+fields
+Time Custom or edited field for specifying time worked. By default, the agentic workflow
+worked uses the Time worked field.
+© 2026 ServiceNow, Inc. All rights reserved. 90
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+| Schedule job |  |
+| Schedule job frequency |  |
+| Predict estimates |  |
+| Exclude task table |  |
+
+| **Config field** | **Description** |
+|---|---|
+| Table |  |
+| Conditions |  |
+| Record fields |  |
+
+Incident table config type configuration (continued)
+Config field Description
+AIS Search Specific AI Search profile
+Profile
+AIS Search Fields AI Search looks at for determining similarity
+Fields
+AIS Return Fields returned by AI Search to the agentic workflow to base decisions on
+Fields
+GAF Config Group Action Framework grouping configuration record, which is a collection of
+groups of records to make searching easier.
+Assigned The field for the user who works on the record. By default, the agentic workflow
+to field uses the assigned_to field.
+Order by JSON object array containing the ordering information for how work records are
+prioritized.
+Default is as follows. Any direction other than “DESC” is considered ascending in
+order.
+[
+{ column: 'priority', direction: ''},
+{ column: 'due_date', direction: ''},
+{ column: 'escalation', direction: 'DESC' },
+{ column: 'sys_created', direction: 'DESC' }
+]
+By default, the Generate my work plan agentic workflow relies on the User [sys_user] record's
+Schedule field. If there is no schedule defined on the User record, the workflow consults the
+Schedule [chm_schedule] table for the user. If neither are present, the assumed schedule is a
+weekday schedule from 8:00 a.m. to 5:00 p.m.
+Change what tables and fields to look for schedule information with the User schedule
+config type.
+Generate my work plan User schedule configuration
+Config field Description
+Table Table where user schedule information is stored
+Conditions (Optional) Conditions to determine what user schedule to associate with the
+user.
+© 2026 ServiceNow, Inc. All rights reserved. 91
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+| AIS Search Profile |  |
+| AIS Search Fields |  |
+| AIS Return Fields |  |
+| GAF Config |  |
+| Assigned to field |  |
+
+| **[** |
+|---|
+| { column: 'priority', direction: ''}, |
+| { column: 'due_date', direction: ''}, |
+| { column: 'escalation', direction: 'DESC' }, |
+| { column: 'sys_created', direction: 'DESC' } |
+| ] |
+
+| **Config field** | **Description** |
+|---|---|
+| Table |  |
+
+Generate my work plan User schedule configuration (continued)
+Config field Description
+Schedule Field where specific schedule information is stored
+column
+Accessing the Generate my work plan agentic workflow
+To access the agentic workflow:
+1.Navigate to All > AI Agent Studio > Create and manage.
+2. Select Generate my work plan.
+The first step of the guided setup includes a complete list of included AI agents. Selecting the
+name of an AI agent opens it in AI Agent Studio, where you can see the full description, role, list
+of steps, and tools. Tools are displayed in the second step of the AI agent guided setup, Add
+tools and information.
+In-product agentic AI and UI actions
+Access agentic workflows in the Core UI and in workspaces in the AI Activity panel. From there,
+track their progress, provide or review input, and see the results of the work performed. For more
+information, see In-product agentic AI for more details about the AI Activity panel.
+To enable users to access agentic workflows with UI actions, open the agentic workflow in AI
+Agent Studio and navigate to the Select channels and access step. Select a UI action as a
+possible way to access the workflow.
+If you don't see your UI actions after configuring it in AI Agent Studio, verify that the property
+com.glide.agentic_processes_view.enabled is set to true. See Enable the in-
+product experience for agentic workflows.
+Testing the Generate my work plan agentic workflow
+Manually test an agentic workflow execution or access on the Testing page of AI Agent Studio
+if you have the sn.aia_admin role and all other roles configured in the security controls. Start a
+manual test, select a test type and the name of the workflow, and use utterances in the Task field
+like the following samples. See Test an agentic workflow execution.
+To evaluate the agentic workflow over many different execution logs, run an automated
+evaluation.
+Sample utterance
+After the workflow is activated in AI Agent Studio, enter What should I work on
+today? or similar phrases in the Now Assist panel to trigger the workflow. You must have the
+sn.now_assist_panel_user role to run the workflow. Also run this workflow on the Testing page of
+AI Agent Studio with the same utterance in the Task field if you have the sn.aia_admin role.
+Users must have the sn_uxc_gen_ai.platform_ai_work_planner role to execute the agentic
+workflow.
+© 2026 ServiceNow, Inc. All rights reserved. 92
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+
+AI agents used in the Generate my work plan agentic workflow
+The following table lists the agents used in the Generate my work plan agentic workflow.
+Important: In the Select channels and status step of each AI agent's guided setup, verify
+that the Status toggle is enabled to activate the AI agent.
+AI agents names and descriptions in the Generate my work plan agentic workflow
+AI agent
+AI agent description Role required
+name
+Prioritize Dynamically orders tasks based on sn_uxc_gen_ai.platform_ai_work_planner
+work AI parameters like urgency, priority, SLAs,
+Agent​ sentiment, and impact.
+Other Platform agentic workflows
+For more information on other agentic workflows associated with the Platform workflow, see
+Platform agentic workflows.
+Platform Generate resolution plan agentic workflow
+Use the Platform Generate resolution plan AI agents agentic workflow to fetch task record details,
+generate resolution summary steps, and update comments or work notes.
+Generate resolution plan overview
+The Generate resolution plan agentic workflow can help resolve tasks by collecting record
+details and generating resolution summaries that can be added to comments or work notes.
+Due to the dynamic nature of AI agents, this agentic workflow can be used for tasks that require
+complex logic even when provided with minimal details.
+The agents, tools, and triggers that are associated with the Generate resolution plan agentic
+workflow are provided by Now Assist applications. You can activate the agentic workflow
+template by making triggers active and setting the display settings to include the Now Assist
+panel. If you want to change this agentic workflow's instructions, you must duplicate it, adjust the
+settings to suit your specific needs, and activate the duplicated version of the agentic workflow
+instead.
+Prerequisites and setup
+To access this workflow, you must have Now Assist for Platform installed on your instance, which
+you can get if you install any other Now Assist application, such as Now Assist for IT Service
+Management (ITSM).
+For this agentic workflow to behave as expected, you must also configure Group Action
+Framework (GAF). See Set up AI Search for Group Action Framework and Configure Group Action
+Framework for more information on getting started with GAF.
+Role masking
+Required role: sn_uxc_gen_ai.platform_ai_grp_workflow.
+Role masking enables users to limit the roles and privileges of agentic workflows during tool
+execution. Agentic workflows and their AI agents that get installed with Now Assist applications
+are assigned pre-defined roles. If you select Users with specific roles for user
+© 2026 ServiceNow, Inc. All rights reserved. 93
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **AI agent name** | **AI agent description** | **Role required** |
+|---|---|---|
+| Prioritize work AI Agent​ | Dynamically orders tasks based on parameters like urgency, priority, SLAs, sentiment, and impact. | sn_uxc_gen_ai.platform_ai_work_planner |
+
+access, you must configure the security controls to include these roles. Data access settings
+must also include these roles. For the instructions to change the security controls, see Define
+security controls for an agentic workflow.
+In the data access settings, you must also add the necessary roles to enable reading of the
+tables for the records you want to access for potential resolution plans. For example, you can add
+the itil role to the agentic workflow's list of approved roles so that it can access Incident records.
+Additional configuration
+You can change different settings related to the agentic workflow by changing values for the Now
+Assist Skill Config Var Set. To access the variable set and make changes, do the following while
+in the Platform AI Agents and Skills scope:
+•Go to the Now Assist Skill Config [sn_nowassist_skill_config] table.
+•Open the record named Generate Resolution Plans Skill Config.
+•In the Now Assist Skill Config Var Set related list, select the configuration variable set you want
+to edit.
+•Set the variables for the configuration type.
+•Save the Var Set.
+The Generate resolution plan configuration variable set includes the following variables. You can
+configure either the AIS fields or the GAF field for determining how the agentic workflow gathers
+what work the user has. If you configure both, GAF takes priority when running the agentic
+workflow. For more information about GAF, see Group Action Framework.
+Review button params configuration
+Config field Description Default value
+Show button Display a UI action for reviewing a generated resolution plan Enabled
+Button label Label for the UI action button to review a generated resolution plan Review
+Next Best Action Recommender configuration
+Config field Description
+Search Mode Options include Keyword, Semantic, or Hybrid. Keyword-based searches look
+at individual phrases, while semantic-based searches rely on the phrasing of
+utterances as well. Hybrid utilizes both strategies.
+Default: Keyword
+Include Determines whether the Decomposition Agent, one of the agents in the
+Decomposition workflow, is used. If this is unselected, the Next best action recommendation
+Agent in the AI agent still runs.
+workflow
+© 2026 ServiceNow, Inc. All rights reserved. 94
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** | **Default value** |
+|---|---|---|
+| Show button | Display a UI action for reviewing a generated resolution plan |  |
+
+| **Config field** | **Description** |
+|---|---|
+| Search Mode |  |
+
+Next Best Action Recommender configuration (continued)
+Config field Description
+use_websearch Enables the agentic workflow to use web searches to help collect relevant
+information for generating the resolution plan
+AIS Semantic ???A
+Indexed Names
+script_to_run Optional script to run when the Next best action recommendation AI agent
+executes
+save_activity Determines whether a tool creates an activity record on the
+sys_aia_agent_execution_activity table when saving resolution notes
+AIS Search Profile for AI search, such as Now Assist in Virtual Agent.
+Profile
+Return Fields Field values returned from identified relevant records
+GAF Config Group Action Framework grouping configuration record, which is a collection
+of groups of records to make searching easier
+AIS Search Fields used by AI Search to determine what work a user has
+Fields
+AI Search Threshold value for whether AI Search considers a record to be related and
+Matching relevant
+Threshold
+Table Table which has the records you want to generate resolution plans for
+Related List Tables which contain related records that you want the AI agent to explore
+Tables before generating resolution plans
+Decomposition Agent configuration
+Config field Description
+agent Name of the AI agent to use for generating resolution actions
+tablesinfo Table information for providing context for generated action steps
+© 2026 ServiceNow, Inc. All rights reserved. 95
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+| use_websearch |  |
+| AIS Semantic Indexed Names |  |
+| script_to_run |  |
+| save_activity |  |
+| AIS Search Profile |  |
+| Return Fields |  |
+| GAF Config |  |
+| AIS Search Fields |  |
+| AI Search Matching Threshold |  |
+| Table |  |
+
+| **Config field** | **Description** |
+|---|---|
+| agent |  |
+
+Accessing the Generate resolution plan agentic workflow
+To access the agentic workflow:
+1.Navigate to All > AI Agent Studio > Create and manage.
+2. Select Generate Resolution Plan.
+The first step of the guided setup includes a complete list of included AI agents. Selecting the
+name of an AI agent opens it in a new browser tab, where you can see the full description, role,
+list of steps, and tools. Tools are displayed in the second step of the AI agent guided setup, Add
+tools and information.
+In-product agentic AI and UI actions
+Agentic workflows can be accessed in the Core UI and in workspaces in the AI Activity panel.
+From there, you can track their progress, provide or review input, and see the results of the work
+performed. For more information, see In-product agentic AI for more details about the AI Activity
+panel.
+To enable users to access agentic workflows with UI actions, you can open the agentic workflow
+in AI Agent Studio and navigate to the Select channels and access step. You can select a UI
+action as a possible way to access the workflow
+If you don't see your UI actions after configuring it in AI Agent Studio, ensure that the property
+com.glide.agentic_processes_view.enabled is set to true. See Enable the in-
+product experience for agentic workflows.
+Testing the Generate Resolution Plan agentic workflow
+You can manually test an agentic workflow execution or access on the Testing page of AI Agent
+Studio if you have the sn.aia_admin role and all other roles configured in the security controls.
+Start a manual test, select a test type and the name of the workflow, and use utterances in the
+Task field like the following samples. See Test an agentic workflow execution.
+If you want to evaluate the agentic workflow over many different execution logs, run an
+automated evaluation.
+Sample utterance
+After the workflow has been activated in AI Agent Studio, enter these or similar phrases in the
+Now Assist panel to trigger the workflow. You must have the sn.now_assist_panel_user role to run
+the workflow. You can also run this workflow on the Testing page of AI Agent Studio with the same
+utterance in the Task field if you have the sn.aia_admin role.
+•Generate resolution plan for INC0001
+•Create detailed resolution steps for INC0001
+•Resolve INC0001
+AI agents used in the Generate resolution plan agentic workflow
+The following table lists the agents that are used in the Generate resolution plan agentic
+workflow.
+Important: In the Select channels and status step of each AI agent's guided setup, make
+sure that the Status toggle is enabled to activate the AI agent.
+© 2026 ServiceNow, Inc. All rights reserved. 96
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+AI agents names and descriptions in the Generate resolution plan agentic workflow
+AI agent name AI agent description Role required
+Next best action Identifies the steps sn_uxc_gen_ai.platform_ai_next_best_action
+recommendation for resolving tasks
+AI agent by referencing the
+similar task details
+and reviewing
+knowledge articles.
+Decomposition Analyzes and sn_uxc_gen_ai.platform_ai_resolution_action_ai_agent
+Agent breaks down
+each previous
+resolution step into
+smaller, actionable
+substeps, then
+creates records
+Other Platform agentic workflows
+For more information on other agentic workflows associated with the Platform workflow, see
+Platform agentic workflows.
+Platform Help optimize team productivity agentic workflow
+Use the Platform Help optimize team productivity AI agents agentic workflow to gather relevant
+information about tasks automatically and make decisions about priorities and assignments.
+Help optimize team productivity overview
+The Help optimize team productivity agentic workflow offers multiple capabilities that can
+enhance your team's performance. Improving assignments based on previous work and
+balancing workloads, the agentic workflow can address problems that traditional work
+assignment rules may have.
+The agentic workflow performs the following tasks:
+•Analyzes historical performance of team members
+•Calculates workloads relative to each team member's typical capacity
+•Enables proactive team management with data-driven insights
+The agents, tools, and triggers that are associated with the Help optimize team productivity
+agentic workflow are provided by Now Assist applications. You can activate the agentic workflow
+template by making triggers active and setting the display settings to include the Now Assist
+panel. If you want to change this agentic workflow's instructions, you must duplicate it, adjust the
+settings to suit your specific needs, and activate the duplicated version of the agentic workflow
+instead.
+Prerequisites and setup
+To access this workflow, you must have Now Assist for Platform installed on your instance, which
+you can get if you install any other Now Assist application, such as Now Assist for IT Service
+Management (ITSM).
+© 2026 ServiceNow, Inc. All rights reserved. 97
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **AI agent name** | **AI agent description** | **Role required** |
+|---|---|---|
+| Next best action recommendation AI agent | Identifies the steps for resolving tasks by referencing the similar task details and reviewing knowledge articles. | sn_uxc_gen_ai.platform_ai_next_best_action |
+| Decomposition Agent | Analyzes and breaks down each previous resolution step into smaller, actionable substeps, then creates records | sn_uxc_gen_ai.platform_ai_resolution_action_ai_agent |
+
+Role masking
+Required role: sn_uxc_gen_ai.platform_ai_help_allocate_work.
+Role masking enables users to limit the roles and privileges of agentic workflows during tool
+execution. Agentic workflows and their AI agents that get installed with Now Assist applications
+are assigned pre-defined roles. If you select Users with specific roles for user
+access, you must configure the security controls to include these roles. Data access settings
+must also include these roles. For the instructions to change the security controls, see Define
+security controls for an agentic workflow.
+In the data access settings, you must also add the necessary roles to enable reading of the
+tables for records assigned to team members. For example, you can add the itil role to the
+agentic workflow's list of approved roles so that it can access Incident records.
+Additional configuration
+You can change different settings related to the agentic workflow by changing values for the Now
+Assist Skill Config Var Set. To access the variable set and make changes, do the following while
+in the Platform AI Agents and Skills scope:
+•Go to the Now Assist Skill Config [sn_nowassist_skill_config] table.
+•Open the record named Optimal Ticket Assignment.
+•In the Now Assist Skill Config Var Set related list, select Work Allocator.
+•Edit the variable values.
+•Save or update the record.
+The Help optimize team productivity configuration variable sets include the following variables.
+Help optimize team productivity Work Allocator configuration
+Config field Description
+Tickets per The number of tickets processed by the agentic workflow for evaluation.
+batch
+Default: 25
+Metrics How many days back to include in metric calculations.
+Calculation
+Window Default: 600
+Assignment The assignment group whose tickets are used for evaluation, analysis, and
+Group recommendations.
+Table for The table used to gather information about the work assigned to team members.
+Query
+Backlog Filter conditions for determining what counts as "backlog" work for team members
+Ticket to complete.
+Query
+© 2026 ServiceNow, Inc. All rights reserved. 98
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+| Tickets per batch |  |
+| Metrics Calculation Window |  |
+| Assignment Group |  |
+| Table for Query |  |
+
+Help optimize team productivity Work Allocator configuration (continued)
+Config field Description
+Similarity The table used for gathering information about other work that has been
+Score Table previously assigned to team members.
+Similarity Fields to consider for calculating which tasks are similar to the one that needs
+Score assigning. For example, selecting category and subcategory as similarity score
+Fields fields includes those fields in calculating whether a team member has worked on
+similar assignments within the metric calculation window.
+Help optimize team productivity Trigger frequency configuration
+Config field Description
+Enable Enable the agentic workflow to run on its own using a scheduled job.
+scheduled job
+Assignment The assignment group whose tickets are used for evaluation, analysis, and
+Group recommendations.
+Scheduled job The name of the scheduled job that runs to trigger the agentic workflow.
+Scheduler How often the scheduled job runs and triggers the agentic workflow.
+frequency
+Accessing the Help optimize team productivity agentic workflow
+To access the agentic workflow:
+1.Navigate to All > AI Agent Studio > Create and manage.
+2. Select Help optimize team productivity.
+The first step of the guided setup includes a complete list of included AI agents. Selecting the
+name of an AI agent opens it in a new browser tab, where you can see the full description, role,
+list of steps, and tools. Tools are displayed in the second step of the AI agent guided setup, Add
+tools and information.
+Testing the Help optimize team productivity agentic workflow
+You can manually test an agentic workflow execution or access on the Testing page of AI Agent
+Studio if you have the sn.aia_admin role and all other roles configured in the security controls.
+Start a manual test, select a test type and the name of the workflow, and use utterances in the
+Task field like the following samples. See Test an agentic workflow execution.
+If you want to evaluate the agentic workflow over many different execution logs, run an
+automated evaluation.
+© 2026 ServiceNow, Inc. All rights reserved. 99
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **Config field** | **Description** |
+|---|---|
+| Similarity Score Table |  |
+
+| **Config field** | **Description** |
+|---|---|
+| Enable scheduled job |  |
+| Assignment Group |  |
+| Scheduled job |  |
+
+Sample utterance
+After the workflow has been activated in AI Agent Studio, enter "Give me optimized assignment
+evaluations for the Software assignment group" or similar phrases in the Now Assist panel to
+trigger the workflow. You must name the specific assignment group you're allocating work for.
+You must have the sn.now_assist_panel_user role to run the workflow. You can also run this
+workflow on the Testing page of AI Agent Studio with the same utterance in the Task field if you
+have the sn.aia_admin role.
+AI agents used in the Help optimize team productivity agentic workflow
+The following table lists the agents that are used in the Help optimize team productivity agentic
+workflow.
+Important: In the Define availability step of each AI agent's guided setup, make sure that
+the Status toggle is enabled to activate the AI agent.
+AI agents names and descriptions in the Help optimize team productivity agentic workflow
+AI agent
+AI agent description Role required
+name
+Work Streamlines ticket management sn_uxc_gen_ai.platform_ai_help_allocate_work
+Allocator by automatically fetching backlog
+AI Agent tickets, evaluating agent workloads
+and performance metrics, and
+assigning tickets to agents in a
+way that optimizes distribution and
+operational efficiency.
+Other Platform agentic workflows
+For more information on other agentic workflows that are associated with the Platform workflow,
+see Platform agentic workflows.
+Platform Identify ways to improve service agentic workflow
+Use the Platform Identify ways to improve service agentic workflow to analyze feedback,
+performance metrics, and historical trends that identify areas for service improvement.
+Identify ways to improve service overview
+The Identify ways to improve service agentic workflow optimizes service delivery and customer
+satisfaction by analyzing feedback, metrics, and trends to provide actionable process
+improvement recommendations. After the analysis is generated, you can continue the
+conversation to ask follow-up questions or download the analysis as a PDF or Word document.
+The Now Assist applications provide the agents, tools, and triggers for the Identify ways to
+improve service agentic workflow. You can activate the agentic workflow template by making
+triggers active and setting the display settings to include the Now Assist panel. To change this
+agentic workflow's instructions, duplicate it, adjust the settings to suit your specific needs, and
+activate the duplicated version instead.
+© 2026 ServiceNow, Inc. All rights reserved. 100
+ServiceNow, the ServiceNow logo, Now, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc., in the United States and/or other countries.
+Other company names, product names, and logos may be trademarks of the respective companies with which they are associated.
+
+| **AI agent name** | **AI agent description** | **Role required** |
+|---|---|---|
+| Work Allocator AI Agent | Streamlines ticket management by automatically fetching backlog tickets, evaluating agent workloads and performance metrics, and assigning tickets to agents in a way that optimizes distribution and operational efficiency. | sn_uxc_gen_ai.platform_ai_help_allocate_work |
