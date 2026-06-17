@@ -1,0 +1,49 @@
+{
+  "section_name": "Document Intelligence",
+  "source_file": "Document Intelligence.pdf",
+  "extraction_date": "2026-06-17",
+  "subsections": [
+    "Explore",
+    "Configure",
+    "Integrate",
+    "Use",
+    "Monitor",
+    "Reference"
+  ],
+  "page_ranges": {
+    "Explore": "1537-1541 (includes section landing page 1537; page 1541 split before `Configuring Document Intelligence`)",
+    "Configure": "1541-1567 (page 1541 split at `Configuring Document Intelligence`; page 1567 split before `Integrating Document Intelligence with other applications`)",
+    "Integrate": "1567-1574 (page 1574 split before `Using Document Intelligence`)",
+    "Use": "1574-1595 (page 1595 split before `Monitoring Document Intelligence performance`)",
+    "Monitor": "1595-1600 (page 1600 split before `Document Intelligence references`)",
+    "Reference": "1600-1629 (page 1629 split before next major section `Task Intelligence`)"
+  },
+  "table_count_by_subsection": {
+    "Explore": 4,
+    "Configure": 18,
+    "Integrate": 2,
+    "Use": 3,
+    "Monitor": 2,
+    "Reference": 30
+  },
+  "image_count_by_subsection": {
+    "Explore": 11,
+    "Configure": 15,
+    "Integrate": 4,
+    "Use": 41,
+    "Monitor": 4,
+    "Reference": 14
+  },
+  "major_figure_count_by_subsection": {
+    "Explore": 6,
+    "Configure": 11,
+    "Integrate": 4,
+    "Use": 21,
+    "Monitor": 4,
+    "Reference": 5
+  },
+  "notes": [
+    "TOC subsection names were used exactly for folder and file naming.",
+    "Shared pages were split at exact source headings using PDF text coordinates and verified against rendered page images."
+  ]
+}

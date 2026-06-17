@@ -1,0 +1,90 @@
+subsection,source_page,title,path,major_figure,manual_or_extracted,bbox
+Explore,1537,Important deprecation callout on section landing page,_assets/figures/docintel_p1537_figure_manual_01.png,yes,manual,72.00;108.00;523.00;196.00
+Explore,1537,Get started navigation grid,_assets/figures/docintel_p1537_figure_manual_02.png,yes,manual,72.00;310.00;523.00;650.00
+Explore,1537,Configure tile icon,_assets/images/docintel_p1537_img01.png,no,extracted_image_block,273.64;358.48;321.64;406.48
+Explore,1537,Integrate tile icon,_assets/images/docintel_p1537_img02.png,no,extracted_image_block,424.00;358.48;472.00;406.48
+Explore,1537,Use tile icon,_assets/images/docintel_p1537_img03.png,no,extracted_image_block,123.27;512.66;171.27;560.66
+Explore,1537,Monitor tile icon,_assets/images/docintel_p1537_img04.png,no,extracted_image_block,273.64;512.66;321.64;560.66
+Explore,1537,Reference tile icon,_assets/images/docintel_p1537_img05.png,no,extracted_image_block,424.00;512.66;472.00;560.66
+Explore,1538,Now Assist in Document Intelligence landing tile continuation,_assets/figures/docintel_p1538_figure_manual_03.png,yes,manual,72.00;35.00;523.00;222.00
+Explore,1538,Important deprecation callout in Explore subsection,_assets/figures/docintel_p1538_figure_manual_04.png,yes,manual,72.00;452.00;523.00;540.00
+Explore,1539,Document Intelligence flow diagram,_assets/images/docintel_p1539_img01.png,yes,extracted_image_block,102.00;51.98;534.00;412.70
+Explore,1540,Responsible automation approach diagram,_assets/images/docintel_p1540_img01.png,yes,extracted_image_block,102.00;77.19;534.00;332.58
+Configure,1541,Important deprecation callout in Configure subsection,_assets/figures/docintel_p1541_figure_manual_05.png,yes,manual,72.00;278.00;523.00;365.00
+Configure,1549,Document extraction use case workflow screenshot and annotated use case form,_assets/images/docintel_p1549_img01.png,yes,extracted_image_block,72.00;443.05;504.00;611.17
+Configure,1553,Inline UI icon,_assets/images/docintel_p1553_img01.png,no,extracted_image_block,197.21;636.46;212.21;650.75
+Configure,1555,Use Cases list with PC-Invoice selected,_assets/images/docintel_p1555_img01.png,yes,extracted_image_block,82.00;342.62;514.00;574.17
+Configure,1555,Duplicate this use case icon,_assets/images/docintel_p1555_img02.png,no,extracted_image_block,383.02;588.19;398.02;603.19
+Configure,1556,Duplicate use case modal,_assets/images/docintel_p1556_img01.png,yes,extracted_image_block,82.00;38.99;514.00;258.59
+Configure,1557,Options icon,_assets/images/docintel_p1557_img01.png,no,extracted_image_block,310.05;112.03;325.05;127.03
+Configure,1558,Options icon,_assets/images/docintel_p1558_img01.png,no,extracted_image_block,310.05;362.20;325.05;377.20
+Configure,1561,Document classification use case with classes,_assets/images/docintel_p1561_img01.png,yes,extracted_image_block,102.00;391.23;534.00;597.24
+Configure,1562,Train use case task list,_assets/images/docintel_p1562_img01.png,yes,extracted_image_block,82.00;422.38;514.00;680.84
+Configure,1563,Identification classification use case classes,_assets/images/docintel_p1563_img01.png,yes,extracted_image_block,82.00;172.46;514.00;390.71
+Configure,1563,Identification use case document tasks,_assets/images/docintel_p1563_img02.png,yes,extracted_image_block,82.00;474.49;514.00;692.74
+Configure,1564,Process task action for classification example,_assets/images/docintel_p1564_img01.png,yes,extracted_image_block,92.00;95.51;524.00;313.76
+Configure,1564,Classify panel with California driver license sample,_assets/images/docintel_p1564_img02.png,yes,extracted_image_block,92.00;378.54;524.00;597.03
+Configure,1565,Train Use Case button after reviewed tasks,_assets/images/docintel_p1565_img01.png,yes,extracted_image_block,82.00;77.24;514.00;295.49
+Integrate,1567,Important deprecation callout in Integrate subsection,_assets/figures/docintel_p1567_figure_manual_06.png,yes,manual,72.00;538.00;523.00;624.00
+Integrate,1569,Integration setup entry point in use case performance screen,_assets/images/docintel_p1569_img01.png,yes,extracted_image_block,92.00;38.98;524.00;319.81
+Integrate,1571,Create Integration modal for Process Task integration,_assets/images/docintel_p1571_img01.png,yes,extracted_image_block,102.00;51.98;534.00;376.25
+Integrate,1571,Create Integration modal for Extract Values integration,_assets/images/docintel_p1571_img02.png,yes,extracted_image_block,102.00;402.51;534.00;702.38
+Use,1574,Important deprecation callout in Use subsection,_assets/figures/docintel_p1574_figure_manual_07.png,yes,manual,72.00;570.00;523.00;657.00
+Use,1576,Document task attachment upload and Process Task button,_assets/images/docintel_p1576_img01.png,yes,extracted_image_block,82.00;38.99;514.00;166.67
+Use,1577,Document tasks list,_assets/images/docintel_p1577_img01.png,yes,extracted_image_block,112.00;51.99;544.00;173.43
+Use,1577,Document task form with Show in DocIntel button,_assets/images/docintel_p1577_img02.png,yes,extracted_image_block,112.00;271.21;544.00;373.45
+Use,1578,Document Intelligence workspace layout for data extraction,_assets/images/docintel_p1578_img01.png,yes,extracted_image_block,72.00;355.70;504.00;621.36
+Use,1579,Workspace field review notification and invoice viewer,_assets/images/docintel_p1579_img01.png,yes,extracted_image_block,72.00;38.99;504.00;274.18
+Use,1579,PO number field recommendation mapped from invoice text,_assets/images/docintel_p1579_img02.png,yes,extracted_image_block,72.00;371.86;504.00;560.49
+Use,1580,Document image panel toolbar,_assets/images/docintel_p1580_img01.png,yes,extracted_image_block,72.00;51.48;504.00;165.24
+Use,1580,Data extraction workspace with invoice table value highlighted,_assets/images/docintel_p1580_img02.png,yes,extracted_image_block,72.00;287.68;504.00;543.04
+Use,1581,Table field group review grid with options menu,_assets/images/docintel_p1581_img01.png,yes,extracted_image_block,72.00;38.99;504.00;259.79
+Use,1581,Inline UI icon,_assets/images/docintel_p1581_img02.png,no,extracted_image_block,224.04;638.14;239.04;650.89
+Use,1581,Inline UI icon,_assets/images/docintel_p1581_img03.png,no,extracted_image_block,488.40;659.91;503.40;674.91
+Use,1581,Inline UI icon,_assets/images/docintel_p1581_img04.png,no,extracted_image_block,339.34;696.43;354.34;711.43
+Use,1582,Date normalization confirmation panel,_assets/images/docintel_p1582_img01.png,yes,extracted_image_block,82.00;108.99;382.00;311.49
+Use,1583,Inline UI icon,_assets/images/docintel_p1583_img01.png,no,extracted_image_block,456.48;136.79;471.48;151.79
+Use,1584,Inline UI icon,_assets/images/docintel_p1584_img01.png,no,extracted_image_block,490.80;44.75;505.80;59.75
+Use,1584,Inline UI icon,_assets/images/docintel_p1584_img02.png,no,extracted_image_block,339.34;81.26;354.34;96.26
+Use,1584,Date normalization confirmation panel repeated example,_assets/images/docintel_p1584_img03.png,yes,extracted_image_block,82.00;197.79;382.00;400.29
+Use,1584,Inline UI icon,_assets/images/docintel_p1584_img04.png,no,extracted_image_block,481.19;547.11;496.19;562.11
+Use,1585,Completed fields view in the extraction workspace,_assets/images/docintel_p1585_img01.png,yes,extracted_image_block,72.00;324.25;504.00;563.75
+Use,1586,Inline UI icon,_assets/images/docintel_p1586_img01.png,no,extracted_image_block,175.94;103.77;190.94;118.05
+Use,1586,Inline UI icon,_assets/images/docintel_p1586_img02.png,no,extracted_image_block,205.32;167.07;220.32;181.36
+Use,1586,Draw tool box for extracting a single field,_assets/images/docintel_p1586_img03.png,yes,extracted_image_block,112.00;260.88;544.00;414.43
+Use,1586,Inline UI icon,_assets/images/docintel_p1586_img04.png,no,extracted_image_block,309.64;642.12;324.64;656.54
+Use,1587,Inline UI icon,_assets/images/docintel_p1587_img01.png,no,extracted_image_block,329.65;356.32;344.65;370.61
+Use,1587,Inline UI icon,_assets/images/docintel_p1587_img02.png,no,extracted_image_block,417.50;431.37;431.00;446.37
+Use,1587,Inline UI icon,_assets/images/docintel_p1587_img03.png,no,extracted_image_block,205.32;465.81;220.32;480.09
+Use,1588,Draw tool grid over invoice table,_assets/images/docintel_p1588_img01.png,yes,extracted_image_block,82.00;38.98;514.00;297.32
+Use,1588,Inline UI icon,_assets/images/docintel_p1588_img02.png,no,extracted_image_block,215.32;397.86;230.32;412.14
+Use,1588,Inline UI icon,_assets/images/docintel_p1588_img03.png,no,extracted_image_block,397.29;559.95;412.29;573.58
+Use,1589,Annotated draw tool grid controls,_assets/images/docintel_p1589_img01.png,yes,extracted_image_block,82.00;416.13;514.00;725.61
+Use,1590,Inline UI icon,_assets/images/docintel_p1590_img01.png,no,extracted_image_block,402.50;179.15;417.50;192.19
+Use,1590,Inline UI icon,_assets/images/docintel_p1590_img02.png,no,extracted_image_block,418.48;383.45;433.48;397.79
+Use,1590,Inline UI icon,_assets/images/docintel_p1590_img03.png,no,extracted_image_block,450.23;458.05;465.23;473.05
+Use,1590,Inline UI icon,_assets/images/docintel_p1590_img04.png,no,extracted_image_block,460.85;545.82;475.85;560.24
+Use,1591,Text box selection for invoice number,_assets/images/docintel_p1591_img01.png,yes,extracted_image_block,82.00;207.83;349.00;305.32
+Use,1591,Table cell selection with hover label,_assets/images/docintel_p1591_img02.png,yes,extracted_image_block,82.00;341.08;514.00;470.42
+Use,1592,Edit recommendation dropdown in table extraction,_assets/images/docintel_p1592_img01.png,yes,extracted_image_block,82.00;164.76;514.00;449.40
+Use,1593,Document Intelligence workspace layout for classification,_assets/images/docintel_p1593_img01.png,yes,extracted_image_block,72.00;287.62;504.00;413.69
+Use,1594,Classify panel with category fields,_assets/images/docintel_p1594_img01.png,yes,extracted_image_block,72.00;38.99;504.00;191.23
+Use,1595,Options icon for flagging follow-up,_assets/images/docintel_p1595_img01.png,no,extracted_image_block,333.03;69.75;348.03;84.75
+Monitor,1595,Important deprecation callout in Monitor subsection,_assets/figures/docintel_p1595_figure_manual_08.png,yes,manual,72.00;157.00;523.00;244.00
+Monitor,1596,Document Intelligence Admin home dashboard,_assets/images/docintel_p1596_img01.png,yes,extracted_image_block,72.00;38.98;504.00;335.55
+Monitor,1597,Document Intelligence monitoring dashboard,_assets/images/docintel_p1597_img01.png,yes,extracted_image_block,72.00;38.98;504.00;346.13
+Monitor,1599,Use case performance dashboard,_assets/images/docintel_p1599_img01.png,yes,extracted_image_block,72.00;38.98;504.00;326.18
+Reference,1600,Important deprecation callout in Reference subsection,_assets/figures/docintel_p1600_figure_manual_09.png,yes,manual,72.00;586.00;523.00;673.00
+Reference,1604,Confidence score display example,_assets/images/docintel_p1604_img01.png,yes,extracted_image_block,102.00;253.94;355.50;403.94
+Reference,1606,Reference field matching diagram,_assets/images/docintel_p1606_img01.png,yes,extracted_image_block,301.14;369.99;517.14;451.27
+Reference,1607,Integer normalization example,_assets/images/docintel_p1607_img01.png,yes,extracted_image_block,72.00;38.99;372.00;188.99
+Reference,1607,Date normalization reference example,_assets/images/docintel_p1607_img02.png,yes,extracted_image_block,72.00;192.24;372.00;394.74
+Reference,1608,Inline UI icon,_assets/images/docintel_p1608_img01.png,no,extracted_image_block,226.17;188.63;241.17;202.92
+Reference,1608,Inline UI icon,_assets/images/docintel_p1608_img02.png,no,extracted_image_block,226.17;248.13;241.17;263.13
+Reference,1608,Inline UI icon,_assets/images/docintel_p1608_img03.png,no,extracted_image_block,226.17;307.63;241.17;321.92
+Reference,1608,Inline UI icon,_assets/images/docintel_p1608_img04.png,no,extracted_image_block,226.17;354.63;241.17;369.63
+Reference,1608,Inline UI icon,_assets/images/docintel_p1608_img05.png,no,extracted_image_block,226.17;401.63;240.42;416.63
+Reference,1608,Inline UI icon,_assets/images/docintel_p1608_img06.png,no,extracted_image_block,226.17;448.63;241.17;461.67
+Reference,1610,Inline UI icon,_assets/images/docintel_p1610_img01.png,no,extracted_image_block,401.89;182.16;414.64;197.16
+Reference,1615,Inline UI icon,_assets/images/docintel_p1615_img01.png,no,extracted_image_block,401.89;668.16;414.64;683.16
+Reference,1619,Inline UI icon,_assets/images/docintel_p1619_img01.png,no,extracted_image_block,401.89;87.65;414.64;102.65
