@@ -67,8 +67,37 @@ def _configure_auth() -> None:
     print(f"[server_http] OAuth enabled. Issuer={ISSUER_URL} Resource={PUBLIC_URL}")
 
 
+def _configure_transport_security() -> None:
+    """Allow the public host so the SDK's DNS-rebinding protection doesn't 421.
+
+    When served behind a proxy (Render, ngrok), the incoming Host header is the
+    public domain, which the SDK rejects by default. ALLOWED_HOSTS is a
+    space/comma-separated list; defaults to "*" (any host) which is fine for a
+    personal, read-only docs server.
+    """
+    from mcp.server.transport_security import TransportSecuritySettings
+
+    raw = os.environ.get("ALLOWED_HOSTS", "*").strip()
+    if raw == "*" or not raw:
+        # Any host: turn protection off. The SDK treats "*" as a literal host,
+        # not a wildcard, so we disable the check rather than allow-list "*".
+        mcp.settings.transport_security = TransportSecuritySettings(
+            enable_dns_rebinding_protection=False,
+        )
+        print("[server_http] DNS-rebinding protection OFF (ALLOWED_HOSTS=*)")
+    else:
+        hosts = [h for h in raw.replace(",", " ").split() if h]
+        mcp.settings.transport_security = TransportSecuritySettings(
+            enable_dns_rebinding_protection=True,
+            allowed_hosts=hosts,
+            allowed_origins=hosts,
+        )
+        print(f"[server_http] allowed_hosts={hosts}")
+
+
 if __name__ == "__main__":
     _configure_auth()
+    _configure_transport_security()
     mcp.settings.host = HOST
     mcp.settings.port = PORT
     mcp.run(transport="streamable-http")
