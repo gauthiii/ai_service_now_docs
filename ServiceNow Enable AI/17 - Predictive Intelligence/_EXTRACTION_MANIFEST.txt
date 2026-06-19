@@ -1,0 +1,15 @@
+Section folder: Predictive Intelligence
+Source file: Predictive Intelligence.pdf
+Extraction date: 2026-06-17
+
+Subsection files:
+- Explore Predictive Intelligence.md
+- Install Predictive Intelligence.md
+- Configure Predictive Intelligence.md
+- Creating and training solutions.md
+- Using Predictive Intelligence.md
+- Testing and monitoring predictions.md
+- Predictive Intelligence references.md
+- _assets/image_inventory.csv
+- _assets/table_inventory.csv
+- _assets/p<source_page>_imageNN.png cropped large source figures/screenshots

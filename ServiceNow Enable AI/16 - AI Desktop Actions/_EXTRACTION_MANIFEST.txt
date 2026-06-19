@@ -1,0 +1,14 @@
+Section folder: AI Desktop Actions
+Source file: AI Desktop Actions.pdf
+Extraction date: 2026-06-17
+
+Subsection files:
+- Explore.md
+- Configure.md
+- Design defined-path desktop actions.md
+- Create AI agents.md
+- Desktop action examples.md
+- Execute desktop actions.md
+- Reference.md
+- _assets/image_inventory.csv
+- _assets/p<source_page>_imageNN.png cropped large source figures/screenshots

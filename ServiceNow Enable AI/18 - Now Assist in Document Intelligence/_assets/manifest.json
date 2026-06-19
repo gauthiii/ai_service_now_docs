@@ -1,0 +1,26 @@
+{
+  "section": "Now Assist in Document Intelligence",
+  "source_pdf": "Now Assist in Document Intelligence.pdf",
+  "toc_subsections": [
+    "Explore",
+    "Configure",
+    "Use",
+    "Reference"
+  ],
+  "files": [
+    "Explore.md",
+    "Configure.md",
+    "Use.md",
+    "Reference.md"
+  ],
+  "page_ranges": {
+    "Explore": "1502-1510 (includes section landing content on 1502-1503; TOC subsection begins on 1504)",
+    "Configure": "1511-1522 (ends before `Using Now Assist in Document Intelligence` on page 1522)",
+    "Use": "1522-1524 (starts at `Using Now Assist in Document Intelligence` on page 1522 and ends before `Now Assist in Document Intelligence reference` on page 1524)",
+    "Reference": "1524-1536 (starts at `Now Assist in Document Intelligence reference` on page 1524; page 1537 is next-section boundary content)"
+  },
+  "asset_inventory": [
+    "_assets/image_inventory.csv",
+    "_assets/table_inventory.csv"
+  ]
+}

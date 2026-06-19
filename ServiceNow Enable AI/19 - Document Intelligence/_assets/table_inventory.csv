@@ -1,0 +1,60 @@
+subsection,source_page,title,row_count,column_count,bbox
+Explore,1537,Get started navigation tiles,7,2,71.90;316.50;523.37;649.89
+Explore,1538,Now Assist in Document Intelligence tile,2,2,71.88;38.31;523.40;221.27
+Explore,1540,Benefits of Document Intelligence,5,3,72.82;379.51;522.44;726.02
+Explore,1541,Benefits of Document Intelligence (continued),3,3,72.65;38.63;522.61;221.14
+Configure,1542,Checklist for setting up Document Intelligence,3,2,72.67;354.90;522.61;710.13
+Configure,1543,Checklist (continued),7,2,72.82;68.13;522.46;751.68
+Configure,1544,Checklist (continued),2,2,72.64;68.13;522.62;128.07
+Configure,1545,Document Intelligence 3.0 or later pre-upgrade checklist,3,2,72.67;416.22;522.26;730.05
+Configure,1546,Document Intelligence 3.0 or later pre-upgrade checklist (continued),3,2,72.85;68.13;522.26;347.92
+Configure,1546,Document Intelligence 3.0 or later upgrade checklist,2,2,72.85;414.43;522.26;517.50
+Configure,1546,Document Intelligence 3.0 or later post-upgrade checklist,3,2,72.85;584.01;522.26;736.34
+Configure,1547,Document Intelligence 3.0 or later post-upgrade checklist (continued),3,2,72.82;68.13;522.25;558.50
+Configure,1547,Cross-scope records for Document Intelligence 3.0 or later,6,6,72.82;625.06;522.25;741.00
+Configure,1548,Cross-scope records for Document Intelligence 3.0 or later (continued),4,6,72.66;68.17;522.85;145.12
+Configure,1548,Document Intelligence settings,5,2,82.00;459.59;522.85;712.99
+Configure,1549,Document Intelligence settings (continued),3,2,82.01;38.40;523.27;150.30
+Configure,1553,Data extraction modes,4,2,72.83;50.13;522.07;551.96
+Configure,1559,Document classification use case form,4,2,82.74;596.51;522.60;726.08
+Configure,1560,Document classification use case form (continued),4,2,82.74;38.61;522.60;415.67
+Configure,1561,Define a new field form,5,2,82.74;109.65;522.59;301.21
+Configure,1566,Manage field values form,7,2,82.74;477.62;522.58;750.69
+Configure,1567,Manage field values form (continued),10,2,82.74;38.61;522.57;427.67
+Integrate,1569,Integration setup form,5,3,82.83;400.76;522.11;741.30
+Integrate,1570,Integration setup form (continued),4,3,82.83;38.63;522.43;327.52
+Use,1575,Document task form,3,2,82.74;572.24;522.61;642.31
+Use,1586,Draw tool box adjustment options,4,2,82.00;502.63;523.27;749.21
+Use,1590,Draw tool grid adjustment options,9,2,82.00;146.66;523.27;690.19
+Monitor,1598,Data visualizations in the monitoring dashboard,7,2,72.68;285.73;522.58;546.30
+Monitor,1600,Data visualizations showing Document Intelligence use case activity,7,2,72.68;205.95;522.58;516.52
+Reference,1601,Document Intelligence roles,6,3,72.68;187.41;522.59;713.78
+Reference,1602,Tables installed with Document Intelligence,11,2,72.70;125.10;522.57;723.67
+Reference,1603,Tables installed with Document Intelligence (continued),12,2,72.79;38.61;522.48;699.18
+Reference,1605,Data extraction modes reference,4,2,72.66;50.13;522.29;551.96
+Reference,1606,Field types,6,2,72.81;97.84;522.45;545.95
+Reference,1608,Document field statuses,7,3,72.68;156.00;522.58;618.79
+Reference,1609,Check box list form,9,2,72.62;306.83;522.46;737.66
+Reference,1610,Check box list form (continued),4,2,72.74;68.13;522.52;292.83
+Reference,1610,Single field form,4,2,72.74;483.28;522.52;725.35
+Reference,1611,Single field form (continued),7,2,72.82;68.13;522.18;742.46
+Reference,1612,Single field form (continued),6,2,72.81;68.13;522.45;701.07
+Reference,1613,Single field group form,9,2,72.70;178.48;522.36;704.31
+Reference,1614,Single field group form (continued),7,2,72.82;68.13;522.46;729.57
+Reference,1615,Single field group form (continued),7,2,72.82;68.13;522.46;745.33
+Reference,1616,Single field group form (continued),2,2,72.74;68.13;522.36;120.57
+Reference,1616,Table form,7,2,72.74;311.02;522.36;718.86
+Reference,1617,Table form (continued),8,2,72.81;68.13;522.46;752.20
+Reference,1618,Table form (continued),6,2,72.83;68.13;522.45;732.57
+Reference,1619,Table form (continued),3,2,72.66;68.13;522.27;185.83
+Reference,1619,Document Intelligence properties,4,3,72.66;475.58;522.27;736.63
+Reference,1620,Document Intelligence properties (continued),8,3,72.83;38.63;522.44;620.52
+Reference,1620,Document Intelligence properties (continued),2,3,72.83;669.09;522.44;716.13
+Reference,1621,Document Intelligence properties (continued),9,3,72.80;38.63;522.47;752.52
+Reference,1622,Document Intelligence properties (continued),4,3,72.66;38.63;522.60;340.64
+Reference,1625,Terminology updates,9,2,72.80;68.13;522.47;242.70
+Reference,1626,Statuses for document tasks,4,2,72.66;536.58;522.60;746.15
+Reference,1627,Statuses for document tasks (continued),3,2,72.53;68.13;522.73;205.70
+Reference,1628,Document Intelligence languages and models,3,2,72.74;138.13;522.52;220.70
+Reference,1628,Limits in Document Intelligence,9,2,72.74;451.75;522.52;741.32
+Reference,1629,Limits in Document Intelligence (continued),5,2,72.62;68.13;522.64;363.54
