@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Git pre-commit hook: blocks a commit if the documentation tree has a
+# coverage-affecting problem (e.g. an orphaned .md the MCP server can't index).
+#
+# Install (run once from the repo root):
+#   ln -sf ../../scripts/pre-commit .git/hooks/pre-commit
+#   chmod +x scripts/pre-commit
+#
+# It is dependency-free (only the Python standard library).
+
+set -e
+repo_root="$(git rev-parse --show-toplevel)"
+python "$repo_root/validate_structure.py"

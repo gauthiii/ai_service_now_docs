@@ -1,0 +1,39 @@
+name: Validate documentation structure
+
+# Ensures the docs tree stays in the shape the MCP server can index
+# (Main document -> Topic -> Subtopic.md). Fails the build if any markdown
+# file would be silently dropped from the index.
+
+on:
+  push:
+    paths:
+      - "ServiceNow Enable AI/**"
+      - "ServiceNow GRC/**"
+      - "validate_structure.py"
+      - "mcp_server.py"
+  pull_request:
+    paths:
+      - "ServiceNow Enable AI/**"
+      - "ServiceNow GRC/**"
+      - "validate_structure.py"
+      - "mcp_server.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # validate_structure.py is dependency-free, so it runs before install.
+      - name: Validate documentation structure
+        run: python validate_structure.py
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Verify the MCP server can build its index
+        run: python -c "import mcp_server as m; print('Indexed subtopics:', len(m.INDEX))"

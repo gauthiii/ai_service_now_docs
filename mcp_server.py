@@ -49,6 +49,7 @@ class Subtopic:
     name: str              # subtopic display name
     description: str       # short basic description
     path: str              # absolute path to the .md file
+    body_lc: str = ""      # cached lower-cased file body (for fast search)
 
 
 # topic folder name like "19 - Document Intelligence" or "2 - AI Risk and Compliance"
@@ -154,11 +155,135 @@ def build_index():
                     name=name,
                     description=description,
                     path=fpath,
+                    body_lc=text.lower(),
                 )
     return subtopics
 
 
 INDEX: dict[str, Subtopic] = build_index()
+
+# ---------------------------------------------------------------------------
+# Search index (BM25 over an in-memory inverted index)
+# ---------------------------------------------------------------------------
+#
+# The previous search was a raw substring count that re-read every file on each
+# query. This replaces it with a proper ranked search built ONCE at startup:
+#
+#   - Tokenize + light-stem each subtopic so "controls"/"control" etc. match.
+#   - Field boosting: tokens from the subtopic NAME and TOPIC are weighted more
+#     heavily than body tokens, so a name hit outranks an incidental body hit.
+#   - BM25 ranking (k1/b) accounts for term rarity (idf) and document length,
+#     so long files no longer win just by being long, and rare query terms
+#     (the discriminating ones) dominate the score.
+#
+# Pure-Python, no extra dependencies, all in memory. Rebuilt only at process
+# start (the corpus is static once the server is running).
+
+import math
+
+_TOKEN_RE = re.compile(r"[a-z0-9]+")
+
+# BM25 parameters (standard defaults).
+_BM25_K1 = 1.5
+_BM25_B = 0.75
+
+# Field boosts: how many times a field's tokens are counted toward term freq.
+_BOOST_NAME = 5
+_BOOST_TOPIC = 2
+_BOOST_DESC = 2
+_BOOST_BODY = 1
+
+
+def _stem(token: str) -> str:
+    """Very light, dependency-free normalizer to improve recall.
+
+    Only strips a few common English suffixes; it is intentionally conservative
+    (no full Porter stemmer) so it never collapses unrelated words. Applied to
+    both indexed tokens and query tokens, so the two always agree.
+    """
+    if len(token) > 4:
+        for suf in ("ing", "ed", "es", "s"):
+            if token.endswith(suf) and len(token) - len(suf) >= 3:
+                return token[: -len(suf)]
+    return token
+
+
+def _tokenize(text: str) -> list[str]:
+    return [_stem(t) for t in _TOKEN_RE.findall(text.lower())]
+
+
+@dataclass
+class SearchIndex:
+    # term -> {subtopic_id: weighted term frequency}
+    postings: dict
+    # term -> number of subtopics containing it
+    doc_freq: dict
+    # subtopic_id -> total weighted token length
+    doc_len: dict
+    avg_len: float
+    n_docs: int
+
+
+def build_search_index(index: dict[str, Subtopic]) -> SearchIndex:
+    postings: dict[str, dict[str, int]] = {}
+    doc_len: dict[str, int] = {}
+
+    for sid, s in index.items():
+        # Weighted bag of words: repeat field tokens by their boost so BM25's
+        # term-frequency term naturally reflects field importance.
+        counts: dict[str, int] = {}
+        for text, boost in (
+            (s.name, _BOOST_NAME),
+            (s.topic, _BOOST_TOPIC),
+            (s.description, _BOOST_DESC),
+            (s.body_lc, _BOOST_BODY),
+        ):
+            for tok in _tokenize(text):
+                counts[tok] = counts.get(tok, 0) + boost
+
+        doc_len[sid] = sum(counts.values())
+        for tok, tf in counts.items():
+            postings.setdefault(tok, {})[sid] = tf
+
+    doc_freq = {tok: len(p) for tok, p in postings.items()}
+    n_docs = len(index)
+    avg_len = (sum(doc_len.values()) / n_docs) if n_docs else 0.0
+    return SearchIndex(postings, doc_freq, doc_len, avg_len, n_docs)
+
+
+SEARCH = build_search_index(INDEX)
+
+
+def bm25_search(query: str, doc_filter: Optional[str], limit: int):
+    """Return a ranked list of (score, Subtopic) using BM25 over SEARCH.
+
+    doc_filter is a lower-cased main-document name or None.
+    """
+    q_terms = _tokenize(query)
+    if not q_terms:
+        return []
+
+    scores: dict[str, float] = {}
+    for term in set(q_terms):
+        postings = SEARCH.postings.get(term)
+        if not postings:
+            continue
+        df = SEARCH.doc_freq[term]
+        # BM25 idf (with +1 inside log to keep it non-negative).
+        idf = math.log(1 + (SEARCH.n_docs - df + 0.5) / (df + 0.5))
+        for sid, tf in postings.items():
+            s = INDEX[sid]
+            if doc_filter and s.document.lower() != doc_filter:
+                continue
+            dl = SEARCH.doc_len[sid]
+            denom = tf + _BM25_K1 * (
+                1 - _BM25_B + _BM25_B * (dl / SEARCH.avg_len if SEARCH.avg_len else 0)
+            )
+            scores[sid] = scores.get(sid, 0.0) + idf * (tf * (_BM25_K1 + 1)) / denom
+
+    ranked = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)[:limit]
+    return [(score, INDEX[sid]) for sid, score in ranked]
+
 
 # ---------------------------------------------------------------------------
 # MCP server
@@ -188,8 +313,8 @@ it reflects the current Zurich/Australia releases.
 
 CONTENT MODEL (hierarchy)
   Main document  ->  Topic  ->  Subtopic (one markdown document of content)
-Each subtopic has a stable `subtopic_id`. There are ~319 subtopics across the
-two documents.
+Each subtopic has a stable `subtopic_id`. There are {subtopic_count} subtopics
+across the two documents.
 
 TOOLS AND THE ORDER TO USE THEM
   1. list_documents()
@@ -214,7 +339,7 @@ RECOMMENDED STRATEGY
     list_subtopics() -> get_subtopic().
   - Always ground answers in the content returned by get_subtopic(), and cite
     the main document, topic, and subtopic name.
-"""
+""".format(subtopic_count=len(INDEX))
 
 mcp = FastMCP(
     "ServiceNow AI Practices Documentation",
@@ -282,47 +407,30 @@ def list_subtopics(document: str, topic: str) -> str:
 @mcp.tool()
 def search_documentation(query: str, document: Optional[str] = None,
                          limit: int = 15) -> str:
-    """Full-text search across all subtopics (names, descriptions, and body text).
-    Returns matching subtopics with their ids so you can fetch them.
+    """Ranked full-text search across all subtopics (names, topics, descriptions,
+    and body text). Uses a BM25-ranked in-memory index with field boosting and
+    light stemming, so the most relevant subtopics come first. Returns matching
+    subtopics with their ids so you can fetch them with get_subtopic().
 
     Args:
         query: Words to search for.
         document: Optional main document name to restrict the search.
         limit: Maximum number of results (default 15).
     """
-    terms = [w for w in re.split(r"\s+", query.lower()) if w]
-    if not terms:
+    if not query or not query.strip():
         return "Provide a non-empty query."
     doc_filter = document.strip().lower() if document else None
 
-    results = []
-    for s in INDEX.values():
-        if doc_filter and s.document.lower() != doc_filter:
-            continue
-        try:
-            with open(s.path, "r", encoding="utf-8", errors="replace") as fh:
-                body = fh.read().lower()
-        except OSError:
-            body = ""
-        haystack = f"{s.name}\n{s.topic}\n{s.description}\n{body}".lower()
-        score = 0
-        for term in terms:
-            score += haystack.count(term)
-            if term in s.name.lower():
-                score += 5
-            if term in s.topic.lower():
-                score += 2
-        if score > 0:
-            results.append((score, s))
-
+    results = bm25_search(query, doc_filter, limit)
     if not results:
         return f"No matches for '{query}'."
-    results.sort(key=lambda x: x[0], reverse=True)
-    out = [f"# Search results for '{query}' ({min(len(results), limit)} of {len(results)})\n"]
-    for score, s in results[:limit]:
+
+    out = [f"# Search results for '{query}' (top {len(results)})\n"]
+    for score, s in results:
         out.append(f"## {s.name}")
         out.append(f"- id: `{s.subtopic_id}`")
         out.append(f"- {s.document} → {s.topic}")
+        out.append(f"- relevance: {score:.2f}")
         out.append(f"- {s.description}\n")
     return "\n".join(out)
 
