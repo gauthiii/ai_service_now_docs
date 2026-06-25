@@ -1,0 +1,40 @@
+# Render Blueprint for the ServiceNow AI docs MCP server (Streamable HTTP).
+#
+# This makes the deployment reproducible and enables automatic redeploys:
+# with autoDeploy enabled and the service connected to this GitHub repo,
+# every push to the `branch` below triggers a rebuild + redeploy — so newly
+# added/edited .md docs go live automatically.
+#
+# Public endpoint: https://ai-service-now-docs.onrender.com/mcp
+#
+# Runtime needs only the packages in requirements.txt (mcp, python-dotenv,
+# httpx). pikepdf/pypdf are build-time-only (PDF splitting) and are NOT
+# installed here. PORT is injected by Render automatically and read by
+# server_http.py.
+
+services:
+  - type: web
+    name: ai-service-now-docs
+    runtime: python
+    plan: free
+    branch: main
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server_http.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      # Allow the public Render host so the MCP SDK's DNS-rebinding check
+      # doesn't reject proxied requests (see README "Host-header / 421 gotcha").
+      - key: ALLOWED_HOSTS
+        value: "*"
+      # --- Optional: enable OAuth by setting these in the Render dashboard ---
+      # (leave unset to keep the read-only docs server open/unauthenticated)
+      # - key: MCP_PUBLIC_URL
+      #   value: "https://ai-service-now-docs.onrender.com"
+      # - key: OAUTH_ISSUER_URL
+      #   sync: false
+      # - key: OAUTH_CLIENT_ID
+      #   sync: false
+      # - key: OAUTH_CLIENT_SECRET
+      #   sync: false

@@ -383,15 +383,35 @@ curl -s -o /dev/null -w "%{http_code}\n" -X POST http://127.0.0.1:8000/mcp \
 
 ### Deploy to Render
 
+The repo includes a [`render.yaml`](render.yaml) **Blueprint**, so the service
+definition (runtime, build/start commands, env vars) lives in version control.
+
 1. Push the repo to GitHub. The big files (`*.pdf`, `*_chunks/`) and secrets
-   (`.env`) are git-ignored, so only the code and the ~6 MB of `.md` docs ship.
-2. Create a **Web Service** pointed at the repo:
+   (`.env`) are git-ignored, so only the code and the `.md` docs ship.
+2. Either **(a)** create a **Blueprint** in Render pointed at the repo (it reads
+   `render.yaml` automatically), or **(b)** create a **Web Service** manually:
    - **Build command:** `pip install -r requirements.txt`
    - **Start command:** `python server_http.py`
 3. (Optional) Set `OAUTH_*` + `MCP_PUBLIC_URL` env vars to enable auth. Leave
    them unset for an open, personal server.
 4. Render gives you `https://<name>.onrender.com`. The connector URL is that plus
    `/mcp`.
+
+#### Automatic redeploys (keeping the docs current)
+
+`render.yaml` sets `autoDeploy: true` on the `main` branch. With the service
+connected to this GitHub repo, **every push to `main` triggers a rebuild +
+redeploy automatically** — so newly added or edited `.md` documentation goes live
+without any manual step. The flow is simply:
+
+```
+edit/add .md docs  ──git push origin main──▶  Render auto-builds  ──▶  live at /mcp
+```
+
+To update the live server, you only need to **commit and push** — Render does the
+rest. (You can watch the deploy in the Render dashboard → *Events* / *Logs*.) If
+you ever want to pause this, set `autoDeploy: false` or toggle *Auto-Deploy* off
+in the dashboard.
 
 > Render's free tier spins the service down when idle, so the first request after
 > a nap cold-starts (~30–60 s) and claude.ai may time out once — just retry.
