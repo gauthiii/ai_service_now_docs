@@ -9,12 +9,14 @@ on:
     paths:
       - "ServiceNow Enable AI/**"
       - "ServiceNow GRC/**"
+      - "AI Control Tower Implementation/**"
       - "validate_structure.py"
       - "mcp_server.py"
   pull_request:
     paths:
       - "ServiceNow Enable AI/**"
       - "ServiceNow GRC/**"
+      - "AI Control Tower Implementation/**"
       - "validate_structure.py"
       - "mcp_server.py"
 
