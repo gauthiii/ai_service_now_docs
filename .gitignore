@@ -4,3 +4,7 @@ __pycache__/
 .env
 enable_ai_chunks/
 grc_chunks/
+aict_implementation_chunks/
+.aict/
+.aict_plan.json
+.aict_manifest.json

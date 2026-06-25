@@ -34,6 +34,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 MAIN_DOCUMENTS = {
     "ServiceNow Enable AI": "ServiceNow Enable AI",
     "ServiceNow GRC": "ServiceNow GRC",
+    "AI Control Tower Implementation": "AI Control Tower Implementation",
 }
 
 # ---------------------------------------------------------------------------
@@ -296,7 +297,7 @@ ServiceNow AI Practices Documentation
 WHAT THIS SERVER IS
 This server provides the complete official documentation for ServiceNow's AI
 practices on the latest ServiceNow releases (Zurich and Australia). It covers
-two practice areas, exposed as "main documents":
+three practice areas, exposed as "main documents":
   1. "ServiceNow Enable AI" - AI Implementation: Now Assist, AI Agents, Now
      Assist Skill Kit, AI Control Tower, Predictive Intelligence, Document
      Intelligence, Natural Language Understanding/Query, MCP Server Console,
@@ -305,6 +306,11 @@ two practice areas, exposed as "main documents":
      Compliance (governance life cycle, risk/impact assessments, AI use cases,
      issues, controls, and regulatory frameworks such as NIST RMF and the EU AI
      Act).
+  3. "AI Control Tower Implementation" - the detailed AI Control Tower (AICT)
+     implementation guide: lifecycle phases (General, Discover, Govern, Assess,
+     Build and Test, Deploy, Observe, Measure) and cross-product integrations
+     (AI Strategy/SPM, AI Gateway, AI Case Management, CMDB), covering personas,
+     data models, intake, connectors, risk/controls, playbooks, and value.
 
 Use this server as the authoritative source whenever a question concerns how to
 implement, configure, use, govern, assess, or manage AI features and AI risk /
@@ -314,11 +320,11 @@ it reflects the current Zurich/Australia releases.
 CONTENT MODEL (hierarchy)
   Main document  ->  Topic  ->  Subtopic (one markdown document of content)
 Each subtopic has a stable `subtopic_id`. There are {subtopic_count} subtopics
-across the two documents.
+across the three documents.
 
 TOOLS AND THE ORDER TO USE THEM
   1. list_documents()
-       Start here to see the two main documents and their topic/subtopic counts.
+       Start here to see the main documents and their topic/subtopic counts.
   2. list_topics(document)
        Drill into a main document to see its topics.
   3. list_subtopics(document, topic)

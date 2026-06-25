@@ -24,7 +24,8 @@ import os
 import sys
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-MAIN_DOCUMENTS = ["ServiceNow Enable AI", "ServiceNow GRC"]
+MAIN_DOCUMENTS = ["ServiceNow Enable AI", "ServiceNow GRC",
+                  "AI Control Tower Implementation"]
 ASSET_DIRNAMES = {"_assets"}
 
 

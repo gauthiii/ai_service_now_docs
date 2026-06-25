@@ -1,7 +1,7 @@
 # ServiceNow AI Practices Documentation — MCP Server
 
 An MCP (Model Context Protocol) server that exposes the official ServiceNow AI
-documentation as searchable, LLM-readable context. It covers two practice areas
+documentation as searchable, LLM-readable context. It covers three practice areas
 on the latest ServiceNow releases (**Zurich** and **Australia**):
 
 - **ServiceNow Enable AI** — AI Implementation (Now Assist, AI Agents, Now Assist
@@ -10,9 +10,13 @@ on the latest ServiceNow releases (**Zurich** and **Australia**):
 - **ServiceNow GRC** — Governance, Risk, and Compliance (AI Risk and Compliance:
   governance life cycle, risk/impact assessments, AI use cases, issues, controls,
   and frameworks such as NIST RMF and the EU AI Act)
+- **AI Control Tower Implementation** — the detailed AICT implementation guide
+  (lifecycle phases: General, Discover, Govern, Assess, Build & Test, Deploy,
+  Observe, Measure; plus cross-product integrations: AI Strategy/SPM, AI Gateway,
+  AI Case Management, CMDB)
 
 The documentation is organized as **main document → topic → subtopic**, where each
-subtopic is a single markdown file (~1,080 subtopics total). The exact count is
+subtopic is a single markdown file (~1,600 subtopics total). The exact count is
 computed live by the server at startup, so it is always accurate.
 
 ---
@@ -92,11 +96,12 @@ to local page numbers. Repeat for each source PDF (adjust the three constants).
 ## Step 2 — Produce the markdown docs
 
 From the PDF chunks, the documentation content is extracted into markdown — **one
-`.md` file per subtopic** — under the two main-document folders:
+`.md` file per subtopic** — under the main-document folders:
 
 ```
 ServiceNow Enable AI/<Topic>/<Subtopic>.md
 ServiceNow GRC/<Topic>/<Subtopic>.md
+AI Control Tower Implementation/<Topic>/<Subtopic>.md
 ```
 
 Each md file is the content of a single subtopic. Two markdown shapes are
@@ -289,7 +294,7 @@ The model resolves these by calling the tools (typically
 
 | Tool                                              | Purpose                                                                       |
 | ------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `list_documents()`                                | List the two main documents with topic/subtopic counts. **Start here.**       |
+| `list_documents()`                                | List the main documents with topic/subtopic counts. **Start here.**           |
 | `list_topics(document)`                           | List the topics within a main document.                                       |
 | `list_subtopics(document, topic)`                 | List a topic's subtopics, each with its `subtopic_id` and short description.  |
 | `search_documentation(query, document?, limit?)`  | BM25-ranked search across all subtopics (field-boosted, light stemming); returns ranked matches with ids + relevance. |
@@ -545,13 +550,14 @@ asyncio.run(main())
 
 **1. How is this context collected, and how up to date is it?**
 The content is extracted from ServiceNow's official product documentation PDFs
-for the **Zurich** and **Australia** releases — the two practice areas *ServiceNow
-Enable AI* (AI implementation) and *ServiceNow GRC* (governance, risk, and
-compliance). The pipeline is: source PDF → page-bounded PDF chunks
+for the **Zurich** and **Australia** releases — the three practice areas *ServiceNow
+Enable AI* (AI implementation), *ServiceNow GRC* (governance, risk, and
+compliance), and *AI Control Tower Implementation* (the detailed AICT
+implementation guide). The pipeline is: source PDF → page-bounded PDF chunks
 ([`split_pikepdf.py`](split_pikepdf.py)) → one markdown file per subtopic under
-the two document folders. It is a **point-in-time snapshot**, not a live mirror of
+the document folders. It is a **point-in-time snapshot**, not a live mirror of
 docs.servicenow.com — it only updates when the `.md` files in this repo are
-regenerated and committed. The corpus currently holds ~1,080 subtopics; the server
+regenerated and committed. The corpus currently holds ~1,600 subtopics; the server
 reports the exact live count via `list_documents()` and the `how_to_use` prompt.
 
 **2. How is the indexing done?**
@@ -566,7 +572,7 @@ reads. See [How the MCP server works (internals)](#how-the-mcp-server-works-inte
 
 **3. How will the LLM know which topic to search for?**
 On connect, the server sends **instructions** (and exposes the `how_to_use`
-prompt) describing the two documents, the topic list, and the recommended tool
+prompt) describing the main documents, the topic list, and the recommended tool
 order. From there the model typically calls `search_documentation(query)` —
 which is BM25-ranked, so the most relevant subtopics surface first regardless of
 which topic they live in — then `get_subtopic(id)` to read full content. For
@@ -628,14 +634,17 @@ the optional pre-commit hook enforce the structure automatically.
 │   └── <Topic>/<Subtopic>.md
 ├── ServiceNow GRC/             # main document: Governance, Risk, and Compliance
 │   └── <Topic>/<Subtopic>.md
+├── AI Control Tower Implementation/  # main document: AICT implementation guide
+│   └── <Topic>/<Subtopic>.md
 ├── grc_chunks/                 # generated PDF chunks (GRC)
 ├── enable_ai_chunks/           # generated PDF chunks (Enable AI)
+├── aict_implementation_chunks/ # generated PDF chunks (AI Control Tower)
 ├── README.md
 └── LICENSE
 ```
 
-> Note: `*.pdf`, `.venv/`, `__pycache__/`, `.env`, `grc_chunks/`, and
-> `enable_ai_chunks/` are git-ignored.
+> Note: `*.pdf`, `.venv/`, `__pycache__/`, `.env`, `grc_chunks/`,
+> `enable_ai_chunks/`, and `aict_implementation_chunks/` are git-ignored.
 >
 > The source PDFs (`servicenow_*.pdf`) and the generated chunk PDFs
 > (`grc_chunks/`, `enable_ai_chunks/`) are **intentionally not committed** — they
